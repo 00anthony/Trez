@@ -8,33 +8,27 @@ import { siteConfig } from "../../lib/site-config";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink pt-32">
+    <section id="top" className="relative flex min-h-svh w-full items-end overflow-hidden  pt-32">
       {/* Cinematic background: swap the <video> source for real jobsite footage.
           poured-concrete.mp4 / drone-flyover.mp4 in /public/video/ */}
       <div className="absolute inset-0 -z-30">
         <video
-          className="h-full w-full object-cover opacity-[0.55]"
+          className="h-full w-full object-cover opacity-[0.55] z-50 absolute inset-0"
           autoPlay
           muted
           loop
           playsInline
-          poster="/hero-poster.jpg"
+          controls
+          poster=""
         >
-          <source src="/video/hero-loop.mp4" type="video/mp4" />
+          <source src="/video/hero-loop-720p.mp4" type="video/mp4" />
         </video>
-        {/* Fallback / ambient base so the section reads even with no video file present */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(122,31,39,0.22), transparent 60%), radial-gradient(ellipse 70% 60% at 80% 80%, rgba(122,31,39,0.14), transparent 60%), linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 55%, #0a0a0a 100%)",
-          }}
-        />
+        
       </div>
 
       {/* Dark gradient overlay for legibility */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-t from-ink via-ink/70 to-ink/30" />
-      <div className="absolute inset-0 -z-20 bg-gradient-to-r from-ink/60 via-transparent to-ink/60" />
+      <div className="absolute inset-0 -z-20 bg-linear-to-t from-ink via-ink/70 to-ink/30" />
+      <div className="absolute inset-0 -z-20 bg-linear-to-r from-ink/60 via-transparent to-ink/60" />
 
       {/* Animated construction grid */}
       <div
