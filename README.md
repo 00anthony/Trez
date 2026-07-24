@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trez Construction Group — Website
 
-## Getting Started
+A premium marketing site for Trez Construction Group, a concrete & general
+contracting company serving Greater Central Texas. Built with Next.js 15
+(App Router), React, TypeScript, and Tailwind CSS v4.
 
-First, run the development server:
+## Design system
+
+- **Palette** — near-black ink (`#0A0A0A`), oxblood red (`#7A1F27`), warm
+  "poured concrete" off-white (`#EDEAE3`). Defined as CSS variables in
+  `src/app/globals.css`.
+- **Type** — Big Shoulders (condensed, industrial display face), Inter
+  (body), IBM Plex Mono (data/spec labels — coordinates, tags, eyebrows).
+- **Signature element** — the "Grade Line": a surveyor's benchmark rule
+  that pours itself in on scroll (`src/components/ui/GradeLine.tsx`), used
+  to divide major sections. It's the one recurring motif tying the whole
+  page together.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev       # http://localhost:3000
+npm run build     # production build
+npm run start     # serve the production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Before launching, replace these placeholders
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Hero video** — drop a real jobsite video at
+   `public/video/hero-loop.mp4` (and a poster frame at
+   `public/hero-poster.jpg`). The Hero component
+   (`src/components/sections/Hero.tsx`) already points at these paths;
+   until they exist it falls back to an ambient gradient background.
+2. **Project photography** — `BeforeAfterSlider` (`src/components/ui/BeforeAfterSlider.tsx`)
+   currently renders a textured placeholder panel. Pass `beforeSrc` /
+   `afterSrc` props with real photo URLs per project in
+   `src/lib/data.ts` (the `projects` array) and it'll use those instead.
+3. **Company details** — phone, email, service-area cities, hours, and
+   social links all live in one place: `src/lib/site-config.ts`.
+4. **Copy & data** — services, projects, testimonials, FAQ, and process
+   steps all live in `src/lib/data.ts`.
+5. **Contact form backend** — `src/app/api/contact/route.ts` currently
+   just logs submissions. Wire it up to your CRM, an email provider
+   (e.g. Resend/Postmark), or a Slack webhook.
+6. **OG image** — add `public/og-image.jpg` (1200×630) for social share
+   previews; referenced in `src/app/layout.tsx` metadata.
+7. **Favicon / app icon** — replace `src/app/favicon.ico`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## SEO
 
-## Learn More
+- `src/app/layout.tsx` — metadata, Open Graph, Twitter cards, and
+  JSON-LD (`GeneralContractor` / `HomeAndConstructionBusiness` +
+  `WebSite` schema) targeting Central Texas concrete/contracting keywords.
+- `src/app/sitemap.ts` and `src/app/robots.ts` — update
+  `siteConfig.url` once you have a production domain.
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/
+  app/
+    layout.tsx        root layout, fonts, metadata, JSON-LD
+    page.tsx           assembles all sections
+    api/contact/       lead form submission endpoint
+    robots.ts / sitemap.ts
+  components/
+    sections/          one file per page section (Hero, Services, ...)
+    ui/                 shared primitives (Button, GradeLine, Reveal, ...)
+  lib/
+    site-config.ts      company info, single source of truth
+    data.ts              services / projects / testimonials / FAQ content
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility & performance notes already built in
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Visible keyboard focus states on all interactive elements
+- `prefers-reduced-motion` respected globally
+- Semantic HTML landmarks (`header`, `main`, `section`, `footer`)
+- Images use `next/image`-ready patterns; swap placeholder `<img>` tags
+  in `BeforeAfterSlider` for `next/image` once real photo assets/domains
+  are configured in `next.config.ts`
