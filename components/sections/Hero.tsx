@@ -1,12 +1,38 @@
 "use client";
 
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Eyebrow from "../ui/Eyebrow";
 import { siteConfig } from "../../lib/site-config";
+import { GoogleIcon } from "../ui/GoogleIcon";
+import { InsuranceLogo } from "../ui/InsuranceLogo";
 
 export default function Hero() {
+  type HeroStat = {
+    icon?: ReactNode;
+    value: string;
+    label: string;
+  };
+
+  const heroStats: HeroStat[] = [
+    siteConfig.stats[0], // Projects Completed
+    {
+      icon: (
+        <InsuranceLogo className="h-8 w-auto fill-white"/>
+      ),
+      value: siteConfig.stats[1].value,   // "100%"
+      label: siteConfig.stats[1].label,   // "Licensed & Insured"
+    },
+    {
+      icon: <GoogleIcon className="h-4 w-4" />,
+      value: `${siteConfig.google.rating} ★`,
+      label: `${siteConfig.google.reviewCount} Google Reviews`,
+    },
+    siteConfig.stats[2], // Estimate Turnaround
+  ];
   return (
     <section id="top" className="relative flex min-h-svh w-full items-end overflow-hidden  pt-32">
       {/* Cinematic background: swap the <video> source for real jobsite footage.
@@ -88,13 +114,16 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="mt-16 grid grid-cols-2 gap-3 md:mt-20 md:flex md:flex-wrap md:gap-4"
         >
-          {siteConfig.stats.map((stat) => (
+          {heroStats.map((stat) => (
             <div
               key={stat.label}
               className="rounded-none border border-concrete/12 bg-charcoal/40 px-5 py-4 backdrop-blur-md md:px-7 md:py-5"
             >
-              <div className="font-display text-2xl font-bold text-concrete md:text-3xl">
-                {stat.value}
+              <div className="flex items-center gap-2">
+                {stat.icon && <span className="shrink-0">{stat.icon}</span>}
+                <span className="font-display text-2xl font-bold text-concrete md:text-3xl">
+                  {stat.value}
+                </span>
               </div>
               <div className="mt-1 font-mono text-[10px] tracking-[0.18em] text-steel uppercase">
                 {stat.label}

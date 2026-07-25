@@ -27,10 +27,16 @@ export const siteConfig = {
     facebook: "https://facebook.com/trezconstructiongroup",
     instagram: "https://instagram.com/trezconstructiongroup",
   },
+  google: {
+    // Placeholder — replace with the real Google Business Profile review link.
+    reviewUrl: "https://g.page/r/REPLACE-WITH-TREZ-PLACE-ID/review",
+    rating: 4.9,
+    reviewCount: 214,
+  },
+  // Keep order in sync with HeroStats in Hero.tsx
   stats: [
     { value: "412+", label: "Projects Completed" },
     { value: "100%", label: "Licensed & Insured" },
-    { value: "4.9/5", label: "Average Rating" },
     { value: "24hr", label: "Estimate Turnaround" },
   ],
   geo: {
