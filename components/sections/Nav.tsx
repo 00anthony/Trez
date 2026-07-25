@@ -38,7 +38,7 @@ export default function Nav() {
     >
       <Container className="flex h-18 items-center justify-between py-4">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="relative h-24 w-32 shrink-0">
+          <span className="relative h-16 w-48 shrink-0">
             <Image 
               src="/logo/logo-full-light.png" 
               alt="logo" 
