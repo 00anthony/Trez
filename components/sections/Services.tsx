@@ -129,9 +129,10 @@ export default function Services() {
                           e.stopPropagation();
                           goToProjects(category);
                         }}
-                        className="inline-flex items-center gap-2 border-b border-oxblood-light/60 font-mono text-xs tracking-[0.14em] text-concrete uppercase transition-colors hover:border-concrete"
+                        className="inline-flex items-center gap-2 border-b border-oxblood-light/60 font-mono text-xs tracking-[0.14em] text-concrete hover:text-white uppercase transition-colors hover:border-concrete"
                         style={{
                           borderColor: "#7a1f27",
+                          
                         }}
                       >
                         See Recent Projects
