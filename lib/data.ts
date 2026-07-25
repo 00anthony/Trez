@@ -4,6 +4,8 @@ export type Service = {
   short: string;
   description: string;
   bullets: string[];
+  /** Optional background photo for the service card (full-bleed, dark overlay applied on top). */
+  image?: string;
 };
 
 export const services: Service[] = [
@@ -14,6 +16,7 @@ export const services: Service[] = [
     description:
       "Engineered driveways that resist cracking through triple-digit summers and clay-soil shift, finished to match your home's architecture.",
     bullets: ["Reinforced base & rebar grid", "Broom, stamped, or exposed aggregate", "Expansion joint engineering"],
+    image: "/services/concrete-driveway.jpg",
   },
   {
     slug: "patios",
@@ -22,6 +25,7 @@ export const services: Service[] = [
     description:
       "From a simple broom-finish patio to a stamped, multi-level outdoor living space, built to extend your home outward.",
     bullets: ["Stamped & stained finishes", "Integrated drainage design", "Pairs with pergolas & outdoor kitchens"],
+    image: "/services/patio-outdoor.jpg",
   },
   {
     slug: "sidewalks",
@@ -30,6 +34,7 @@ export const services: Service[] = [
     description:
       "ADA-aware sidewalk and walkway pours for residential lots, subdivisions, and commercial properties across Central Texas.",
     bullets: ["ADA slope compliance", "HOA & municipal permitting support", "Decorative border options"],
+    image: "/services/sidewalk.jpg",
   },
   {
     slug: "foundations",
@@ -38,6 +43,7 @@ export const services: Service[] = [
     description:
       "Foundation work engineered specifically for expansive Central Texas clay soil, from new-build slabs to structural repair.",
     bullets: ["Post-tensioned & rebar slabs", "Soil-specific engineering", "Foundation leveling & repair"],
+    image: "/services/foundation.webp",
   },
   {
     slug: "slabs",
@@ -46,6 +52,7 @@ export const services: Service[] = [
     description:
       "Flat, level, load-rated slabs for garages, workshops, RV pads, and equipment pads — poured to the tolerance your project needs.",
     bullets: ["Vapor barrier & moisture control", "Load-rated for shops & equipment", "Fast-track scheduling available"],
+    image: "/services/slab-foundation.jpeg",
   },
   {
     slug: "concrete-repair",
@@ -54,6 +61,7 @@ export const services: Service[] = [
     description:
       "Repair work for settled, cracked, or spalling concrete — from surface patching to full section replacement.",
     bullets: ["Mudjacking & slab lifting", "Structural crack injection", "Spall & surface repair"],
+    image: "/services/repair.webp",
   },
   {
     slug: "residential-construction",
@@ -62,6 +70,7 @@ export const services: Service[] = [
     description:
       "Full residential construction services, from foundation to finish, for additions, remodels, and custom homes.",
     bullets: ["Additions & remodels", "Custom home construction", "In-house project management"],
+    image: "/services/residential-construction.jpg",
   },
   {
     slug: "commercial-construction",
@@ -70,6 +79,7 @@ export const services: Service[] = [
     description:
       "Commercial concrete and light construction for retail build-outs, parking areas, and small commercial properties.",
     bullets: ["Commercial pads & flatwork", "Tenant finish-out", "Bonded & insured crews"],
+    image: "/services/light-commercial.avif",
   },
   {
     slug: "general-contracting",
@@ -78,6 +88,7 @@ export const services: Service[] = [
     description:
       "Full-service general contracting that coordinates every trade on your project so you have a single point of accountability.",
     bullets: ["Permitting & inspections", "Subcontractor coordination", "Fixed-scope project timelines"],
+    image: "/services/blueprint.jpg",
   },
 ];
 
@@ -103,12 +114,14 @@ export type Project = {
   tags: string[];
   beforeLabel: string;
   afterLabel: string;
+  beforeSrc?: string;
+  afterSrc?: string;
 };
 
 export const projects: Project[] = [
   {
-    slug: "westlake-motor-court",
-    title: "Westlake Motor Court",
+    slug: "westlake-driveway",
+    title: "Westlake Driveway",
     location: "Westlake Hills, TX",
     category: "Driveways",
     service: "Stamped Concrete Driveway",
@@ -116,11 +129,13 @@ export const projects: Project[] = [
     completed: "March 2026",
     sqft: "2,400 sq ft",
     description:
-      "A cracked asphalt drive replaced with a stamped, ashlar-slate pattern motor court sized for a three-car motor court and turnaround.",
-    review: { quote: "It looks like it belongs in a magazine, not a driveway.", author: "M. Alvarado" },
+      "A cracked asphalt driveway replaced with a stamped, ashlar-slate pattern motor court sized for a three-car motor court and turnaround.",
+    review: { quote: "A true blessing, I actually could not believe the transformation. More than impressed and would definitely recommend Trez to anyone I know.", author: "M. Alvarado" },
     tags: ["Stamped", "Reinforced Base", "3-Car"],
     beforeLabel: "Cracked asphalt, poor drainage",
     afterLabel: "Ashlar-slate stamped concrete",
+    beforeSrc: "/projects/stamped-driveway-before.png",
+    afterSrc: "/projects/stamped-driveway-after.png",
   },
   {
     slug: "barton-creek-pool-deck",
@@ -137,6 +152,8 @@ export const projects: Project[] = [
     tags: ["Cool-Touch Finish", "Drainage System"],
     beforeLabel: "Bare dirt & failing pavers",
     afterLabel: "Knockdown-finish cantilevered deck",
+    beforeSrc: "/projects/pool-deck-before.png",
+    afterSrc: "/projects/pool-deck-after.png",
   },
   {
     slug: "round-rock-retail-pad",
@@ -152,51 +169,8 @@ export const projects: Project[] = [
     tags: ["Load-Rated", "Multi-Tenant", "Fast-Track"],
     beforeLabel: "Graded lot, no flatwork",
     afterLabel: "18,000 sq ft load-rated pad",
-  },
-  {
-    slug: "georgetown-foundation-repair",
-    title: "Georgetown Foundation Repair",
-    location: "Georgetown, TX",
-    category: "Repairs",
-    service: "Slab Leveling & Crack Injection",
-    timeline: "4 days",
-    completed: "February 2026",
-    description:
-      "Mudjacking and structural crack injection to correct settlement caused by expansive clay soil beneath a 1990s foundation.",
-    review: { quote: "Doors close properly again for the first time in years.", author: "D. Nguyen" },
-    tags: ["Mudjacking", "Crack Injection"],
-    beforeLabel: "2 in. settlement, active cracking",
-    afterLabel: "Releveled & structurally sealed",
-  },
-  {
-    slug: "hutto-family-patio",
-    title: "Hutto Family Patio",
-    location: "Hutto, TX",
-    category: "Patios",
-    service: "Broom-Finish Patio & Firepit Slab",
-    timeline: "5 days",
-    completed: "April 2026",
-    sqft: "960 sq ft",
-    description:
-      "A broom-finish patio extension with a dedicated firepit slab and a control-jointed border poured to match the existing home.",
-    tags: ["Broom Finish", "Firepit Pad"],
-    beforeLabel: "Undeveloped backyard",
-    afterLabel: "960 sq ft patio + firepit slab",
-  },
-  {
-    slug: "leander-shop-slab",
-    title: "Leander Shop Slab",
-    location: "Leander, TX",
-    category: "Slabs",
-    service: "Load-Rated Shop Slab",
-    timeline: "1 week",
-    completed: "June 2026",
-    sqft: "1,200 sq ft",
-    description:
-      "A vapor-barriered, load-rated slab for a personal workshop, fiber-reinforced and finished to a tight flatness tolerance for equipment.",
-    tags: ["Vapor Barrier", "Fiber-Reinforced"],
-    beforeLabel: "Bare gravel pad",
-    afterLabel: "1,200 sq ft finished shop slab",
+    beforeSrc: "/projects/rr-retail-pad-before.jpg",
+    afterSrc: "/projects/rr-retail-pad-after.jpg",
   },
   {
     slug: "cedar-park-new-build",
@@ -212,6 +186,59 @@ export const projects: Project[] = [
     tags: ["Post-Tensioned", "New Construction"],
     beforeLabel: "Graded & staked lot",
     afterLabel: "Engineered post-tensioned slab",
+    beforeSrc: "/projects/new-build-before.png",
+    afterSrc: "/projects/new-build-after.png",
+  },
+  {
+    slug: "georgetown-foundation-repair",
+    title: "Georgetown Foundation Repair",
+    location: "Georgetown, TX",
+    category: "Repairs",
+    service: "Slab Leveling & Crack Injection",
+    timeline: "4 days",
+    completed: "February 2026",
+    description:
+      "Mudjacking and structural crack injection to correct settlement caused by expansive clay soil beneath a 1990s foundation.",
+    review: { quote: "Doors close properly again for the first time in years.", author: "D. Nguyen" },
+    tags: ["Mudjacking", "Crack Injection"],
+    beforeLabel: "2 in. settlement, active cracking",
+    afterLabel: "Releveled & structurally sealed",
+    beforeSrc: "/projects/foundation-repair-before.jpg",
+    afterSrc: "/projects/foundation-repair-after.jpg",
+  },
+  {
+    slug: "hutto-family-patio",
+    title: "Hutto Family Patio",
+    location: "Hutto, TX",
+    category: "Patios",
+    service: "Broom-Finish Patio & Firepit Slab",
+    timeline: "5 days",
+    completed: "April 2026",
+    sqft: "960 sq ft",
+    description:
+      "A broom-finish patio extension with a dedicated firepit slab and a control-jointed border poured to match the existing home.",
+    tags: ["Broom Finish", "Firepit Pad"],
+    beforeLabel: "Undeveloped backyard",
+    afterLabel: "960 sq ft patio + firepit slab",
+    beforeSrc: "/projects/back-patio-before.png",
+    afterSrc: "/projects/back-patio-after.jpg",
+  },
+  {
+    slug: "leander-shop-slab",
+    title: "Leander Shop Slab",
+    location: "Leander, TX",
+    category: "Slabs",
+    service: "Load-Rated Shop Slab",
+    timeline: "1 week",
+    completed: "June 2026",
+    sqft: "1,200 sq ft",
+    description:
+      "A vapor-barriered, load-rated slab for a personal workshop, fiber-reinforced and finished to a tight flatness tolerance for equipment.",
+    tags: ["Vapor Barrier", "Fiber-Reinforced"],
+    beforeLabel: "Bare gravel pad",
+    afterLabel: "1,200 sq ft finished shop slab",
+    beforeSrc: "/projects/shop-slab-before.jpg",
+    afterSrc: "/projects/shop-slab-after.jpg",
   },
   {
     slug: "temple-sidewalk-network",
@@ -227,6 +254,50 @@ export const projects: Project[] = [
     tags: ["HOA Coordination", "Municipal Inspection"],
     beforeLabel: "Unpaved subdivision phase",
     afterLabel: "ADA-compliant sidewalk network",
+    beforeSrc: "/projects/sidewalk-before.jpg",
+    afterSrc: "/projects/sidewalk-after.jpg",
+  },
+  {
+    slug: "lockhart-garage-slab",
+    title: "Lockhart Garage Slab",
+    location: "Lockhart, TX",
+    category: "Slabs",
+    service: "Reinforced Concrete Garage Slab",
+    timeline: "4 days",
+    completed: "May 2026",
+    sqft: "960 sq ft",
+    description:
+      "Installed a reinforced monolithic concrete slab for a detached two-car garage, including proper grading, compaction, rebar reinforcement, and control joints for long-term durability.",
+    review: {
+      quote: "The crew was professional from start to finish, and the slab came out perfectly level.",
+      author: "J. Ramirez",
+    },
+    tags: ["Garage Slab", "Rebar Reinforced", "Monolithic"],
+    beforeLabel: "Uneven dirt pad",
+    afterLabel: "Finished reinforced garage slab",
+    beforeSrc: "/projects/lockhart-garage-before.png",
+    afterSrc: "/projects/lockhart-garage-after.png",
+  },
+  {
+    slug: "san-marcos-front-patio",
+    title: "San Marcos Front Patio",
+    location: "San Marcos, TX",
+    category: "Patios",
+    service: "Stamped Front Entry Concrete Patio",
+    timeline: "3 days",
+    completed: "June 2026",
+    sqft: "340 sq ft",
+    description:
+      "Replaced an aging front entry with a clean brushed concrete patio, creating a more welcoming entrance while improving drainage and expanding the usable outdoor space.",
+    review: {
+      quote: "It completely transformed the front of our home. We couldn't be happier.",
+      author: "S. Hernandez",
+    },
+    tags: ["Brushed Finish", "Front Entry", "Residential"],
+    beforeLabel: "Worn and cracked entry",
+    afterLabel: "Expanded brushed concrete patio",
+    beforeSrc: "/projects/sm-front-patio-before.png",
+    afterSrc: "/projects/sm-front-patio-after.png",
   },
 ];
 
@@ -262,21 +333,25 @@ export const whyChooseUs = [
     title: "Engineered for Texas Clay",
     description:
       "Central Texas' expansive clay soil is why concrete fails elsewhere. Every pour is engineered for the ground it sits on.",
+    media: { enabled: false, label: "Soil Engineering Explainer" },
   },
   {
     title: "Licensed, Bonded & Insured",
     description:
       "Fully licensed general contractor with bonding and liability coverage on every residential and commercial project.",
+    media: { enabled: false, label: "Credentials Walkthrough" },
   },
   {
     title: "In-House Crews",
     description:
       "No rotating subcontractors on the concrete work itself — the crew that quotes your project is the crew that pours it.",
+    media: { enabled: true, label: "Watch: A Pour Day With Our Crew" },
   },
   {
     title: "Written, Itemized Quotes",
     description:
       "Every estimate is itemized by material, labor, and finish, with no allowances hidden in vague line items.",
+    media: { enabled: true, label: "Watch: Reading Your Estimate" },
   },
 ];
 
@@ -287,6 +362,7 @@ export const testimonials = [
     author: "Marcus Alvarado",
     location: "Westlake Hills, TX",
     rating: 5,
+    date: "3 weeks ago",
   },
   {
     quote:
@@ -294,6 +370,7 @@ export const testimonials = [
     author: "Priya Chandran",
     location: "Round Rock, TX",
     rating: 5,
+    date: "1 month ago",
   },
   {
     quote:
@@ -301,6 +378,7 @@ export const testimonials = [
     author: "David Nguyen",
     location: "Georgetown, TX",
     rating: 5,
+    date: "2 months ago",
   },
   {
     quote:
@@ -308,6 +386,23 @@ export const testimonials = [
     author: "Teresa Whitfield",
     location: "Austin, TX",
     rating: 5,
+    date: "2 months ago",
+  },
+  {
+    quote:
+      "Communication was excellent from the estimate through the final walkthrough. Would hire again without hesitation.",
+    author: "Sarah Kimble",
+    location: "Cedar Park, TX",
+    rating: 5,
+    date: "3 months ago",
+  },
+  {
+    quote:
+      "Fair pricing, and they caught a drainage issue our last contractor missed entirely before it became a real problem.",
+    author: "James Ortiz",
+    location: "Pflugerville, TX",
+    rating: 5,
+    date: "4 months ago",
   },
 ];
 
@@ -346,5 +441,10 @@ export const faqs = [
     question: "Is there a warranty on your concrete work?",
     answer:
       "Yes. All structural concrete work includes a written workmanship warranty, in addition to any applicable manufacturer warranties on sealers and specialty finishes.",
+  },
+  {
+    question: "How much does a concrete project typically cost?",
+    answer:
+      "Cost depends heavily on square footage, finish type, and site prep needs. A site visit lets us give you an accurate, itemized number rather than a rough range that misses the specifics of your lot.",
   },
 ];

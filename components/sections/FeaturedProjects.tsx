@@ -1,17 +1,20 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Calendar, Ruler, Star } from "lucide-react";
 import clsx from "clsx";
-import Container from "../ui/Container";
-import Eyebrow from "../ui/Eyebrow";
-import GradeLine from "../ui/GradeLine";
-import Reveal from "../ui/Reveal";
-import BeforeAfterSlider from "../ui/BeforeAfterSlider";
-import { projects, ProjectCategory } from "../../lib/data";
+import Container from "../../components/ui/Container";
+import Eyebrow from "../../components/ui/Eyebrow";
+import GradeLine from "../../components/ui/GradeLine";
+import Reveal from "../../components/ui/Reveal";
+import Button from "../../components/ui/Button";
+import BeforeAfterSlider from "../../components/ui/BeforeAfterSlider";
+import SectionNumber from "../../components/ui/SectionNumber";
+import SectionBackdrop from "../../components/ui/SectionBackdrop";
+import { projects } from "../../lib/data";
+import { useProjectsFilter, FilterValue } from "../../lib/projects-filter-context";
 
-const filters: ("All" | ProjectCategory)[] = [
+const filters: FilterValue[] = [
   "All",
   "Driveways",
   "Patios",
@@ -21,15 +24,24 @@ const filters: ("All" | ProjectCategory)[] = [
   "Repairs",
 ];
 
-export default function FeaturedProjects() {
-  const [active, setActive] = useState<(typeof filters)[number]>("All");
+const VISIBLE_COUNT = 4;
 
-  const visible =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
+/** All projects if "All" is active, otherwise the first N in category order — never paginated. */
+function pickVisible(active: FilterValue) {
+  const pool = active === "All" ? projects : projects.filter((p) => p.category === active);
+  return pool.slice(0, VISIBLE_COUNT);
+}
+
+export default function FeaturedProjects() {
+  const { activeFilter, setActiveFilter } = useProjectsFilter();
+  const visible = pickVisible(activeFilter);
 
   return (
-    <section id="projects" className="relative bg-ink py-28 md:py-36">
-      <Container>
+    <section id="projects" className="relative overflow-hidden bg-ink pb-12 md:pb-16">
+      <SectionBackdrop />
+      <SectionNumber n="02" />
+
+      <Container className="relative">
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
             <div>
@@ -52,10 +64,10 @@ export default function FeaturedProjects() {
           {filters.map((f) => (
             <button
               key={f}
-              onClick={() => setActive(f)}
+              onClick={() => setActiveFilter(f)}
               className={clsx(
                 "border px-4 py-2 font-mono text-[11px] tracking-[0.14em] uppercase transition-colors duration-200",
-                active === f
+                activeFilter === f
                   ? "border-oxblood bg-oxblood text-concrete"
                   : "border-charcoal-2 text-concrete/55 hover:border-concrete/40 hover:text-concrete"
               )}
@@ -80,6 +92,8 @@ export default function FeaturedProjects() {
                 <BeforeAfterSlider
                   beforeLabel={project.beforeLabel}
                   afterLabel={project.afterLabel}
+                  beforeSrc={project.beforeSrc}
+                  afterSrc={project.afterSrc}
                   seed={i}
                 />
 
@@ -138,10 +152,32 @@ export default function FeaturedProjects() {
               </motion.article>
             ))}
           </AnimatePresence>
+
+          {visible.length === 0 && (
+            <div className="col-span-full border border-dashed border-charcoal-2 p-14 text-center">
+              <p className="text-sm text-concrete/55">
+                No projects filed under this category yet — check back soon.
+              </p>
+            </div>
+          )}
         </div>
+
+        {/* Custom project CTA */}
+        <Reveal delay={0.1} className="mt-20 flex flex-col items-center border border-charcoal-2 bg-charcoal/40 px-8 py-14 text-center md:py-16">
+          <p className="font-mono text-[11px] tracking-[0.2em] text-steel uppercase">
+            Don&rsquo;t See Your Project?
+          </p>
+          <h3 className="mt-4 max-w-xl font-display text-3xl font-bold uppercase tracking-tight text-concrete sm:text-4xl">
+            We build custom concrete solutions
+          </h3>
+          <Button href="#contact" variant="primary" className="mt-8">
+            Request a Free Estimate
+          </Button>
+        </Reveal>
 
         <GradeLine className="mt-24" />
       </Container>
     </section>
   );
 }
+
