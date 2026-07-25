@@ -13,7 +13,7 @@ export default function Hero() {
           poured-concrete.mp4 / drone-flyover.mp4 in /public/video/ */}
       <div className="absolute inset-0 -z-30">
         <video
-          className="h-full w-full object-cover opacity-[0.55] z-50 absolute inset-0"
+          className="h-full w-full object-cover opacity-[0.95] z-50 absolute inset-0"
           autoPlay
           muted
           loop
@@ -27,7 +27,7 @@ export default function Hero() {
       </div>
 
       {/* Dark gradient overlay for legibility */}
-      <div className="absolute inset-0 -z-20 bg-linear-to-t from-ink via-ink/70 to-ink/30" />
+      <div className="absolute inset-0 -z-20 bg-linear-to-t from-ink via-ink/40 to-ink/10" />
       <div className="absolute inset-0 -z-20 bg-linear-to-r from-ink/60 via-transparent to-ink/60" />
 
       {/* Animated construction grid */}
@@ -55,7 +55,7 @@ export default function Hero() {
           <h1 className="max-w-4xl font-display text-[15vw] leading-[0.9] font-extrabold uppercase tracking-tight text-concrete text-balance sm:text-[9vw] md:text-[6.4vw] lg:text-[5.6rem]">
             Concrete, poured
             <br />
-            with <span className="text-oxblood-light">precision.</span>
+            with <span className="text-oxblood-light ">precision.</span>
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-relaxed text-concrete/75 md:text-lg">
@@ -68,7 +68,14 @@ export default function Hero() {
             <Button href="#contact" variant="primary">
               Get Free Estimate
             </Button>
-            <Button href="#projects" variant="secondary" icon={false}>
+            <Button 
+              href="#projects" 
+              variant="secondary" 
+              icon={false} 
+              style={{
+                borderColor: "",
+              }}
+            >
               View Projects
             </Button>
           </div>

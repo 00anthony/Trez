@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 import { ArrowUpRight } from "lucide-react";
@@ -9,6 +9,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
   icon?: boolean;
+  style?: CSSProperties;
   onClick?: () => void;
   type?: "button" | "submit";
   disabled?: boolean;
@@ -20,6 +21,7 @@ export default function Button({
   variant = "primary",
   className,
   icon = true,
+  style,
   onClick,
   type = "button",
   disabled,
@@ -51,14 +53,21 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} style={style}>
         {content}
       </Link>
     );
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes} disabled={disabled}>
+    <button 
+      type={type} 
+      onClick={onClick} 
+      className={classes}
+      style={style} 
+      disabled={disabled}
+
+    >
       {content}
     </button>
   );
