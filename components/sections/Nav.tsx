@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
-import Container from "../ui/Container";
-import Button from "../ui/Button";
+import Container from "../../components/ui/Container";
+import Button from "../../components/ui/Button";
 import { siteConfig } from "../../lib/site-config";
 
 const links = [
@@ -30,19 +31,22 @@ export default function Nav() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
-        scrolled
-          ? "border-b border-charcoal-2 bg-ink/85 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+        scrolled || open
+          ? "bg-ink/85 backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
       <Container className="flex h-18 items-center justify-between py-4">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center border border-oxblood-light/60 font-display text-lg font-bold text-concrete">
-            T
+          <span className="relative h-24 w-32 shrink-0">
+            <Image 
+              src="/logo/logo-full-light.png" 
+              alt="logo" 
+              width={224}
+              height={74} 
+              className="object-contain " priority />
           </span>
-          <span className="font-display text-xl font-semibold uppercase tracking-wide text-concrete">
-            Trez <span className="text-steel">Construction</span>
-          </span>
+          
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
