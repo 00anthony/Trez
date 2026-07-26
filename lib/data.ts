@@ -333,13 +333,13 @@ export const whyChooseUs = [
     title: "Engineered for Texas Clay",
     description:
       "Central Texas' expansive clay soil is why concrete fails elsewhere. Every pour is engineered for the ground it sits on.",
-    media: { enabled: false, label: "Soil Engineering Explainer" },
+    media: { enabled: true, label: "Soil Engineering Explainer" },
   },
   {
     title: "Licensed, Bonded & Insured",
     description:
       "Fully licensed general contractor with bonding and liability coverage on every residential and commercial project.",
-    media: { enabled: false, label: "Credentials Walkthrough" },
+    media: { enabled: true, label: "Credentials Walkthrough" },
   },
   {
     title: "In-House Crews",
