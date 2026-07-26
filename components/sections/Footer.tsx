@@ -1,4 +1,5 @@
-import Container from "../ui/Container";
+import Image from "next/image";
+import Container from "../../components/ui/Container";
 import { siteConfig } from "../../lib/site-config";
 import { services } from "../../lib/data";
 
@@ -10,13 +11,11 @@ export default function Footer() {
       <Container>
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <a href="#top" className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center border border-oxblood-light/60 font-display text-lg font-bold text-concrete">
-                T
+            <a href="#top" className="flex items-left">
+              <span className="relative h-22 w-64 shrink-0 object-left">
+                <Image src="/logo/logo-full-light.png" alt="logo" fill className="object-contain" />
               </span>
-              <span className="font-display text-lg font-semibold uppercase tracking-wide text-concrete">
-                Trez Construction
-              </span>
+              
             </a>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-concrete/55">
               Premium concrete and general contracting for {siteConfig.serviceArea}.
