@@ -2,7 +2,6 @@
 
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Eyebrow from "../ui/Eyebrow";
