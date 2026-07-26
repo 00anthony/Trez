@@ -10,6 +10,7 @@ import Testimonials from "../components/sections/Testimonials";
 import FAQ from "../components/sections/FAQ";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/sections/Footer";
+import { ProjectsFilterProvider } from "../lib/projects-filter-context";
 
 export default function Home() {
   return (
@@ -18,8 +19,10 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
-        <Services />
-        <FeaturedProjects />
+        <ProjectsFilterProvider>
+          <Services />
+          <FeaturedProjects />
+        </ProjectsFilterProvider>
         <Process />
         <About />
         <WhyChooseUs />

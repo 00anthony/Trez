@@ -16,7 +16,35 @@ contracting company serving Greater Central Texas. Built with Next.js 15
   to divide major sections. It's the one recurring motif tying the whole
   page together.
 
-## Getting started
+## Revision 2 — what's new
+
+- **Loading screen** (`src/components/AppShell.tsx` + `src/components/ui/LoadingScreen.tsx`) —
+  assembles your logo from three real, auto-cropped assets at
+  `public/logo/logo-icon.png`, `logo-wordmark.png`, `logo-subtext.png`
+  (derived from the file you sent — swap these three files any time you
+  have refreshed brand assets, no code changes needed).
+- **Hero "precision"** now has a metallic shine sweep (`.text-metallic` in
+  `globals.css`).
+- **Services ↔ Projects linking** — `src/lib/projects-filter-context.tsx`
+  shares filter state between the two sections; each service's "See
+  Recent Projects" button scrolls to and filters the Projects grid. Edit
+  `serviceToCategory` there if you rename or add categories.
+- **Projects filtering** — `data.ts` supports any number of projects;
+  the grid always shows the first 4 matches for the active category
+  (see `pickVisible()` in `FeaturedProjects.tsx`), no pagination.
+- **Process** — full-width diagonal panels on desktop, spring snap-scroll
+  carousel on mobile (`Process.tsx`).
+- **Why Choose Us** — each item in `whyChooseUs` (`data.ts`) has an
+  optional `media.enabled` flag for an embeddable video/demo slot.
+- **Testimonials** — Google-Reviews-styled cards; update
+  `siteConfig.google.reviewUrl`, `.rating`, `.reviewCount` in
+  `site-config.ts` with your real Google Business Profile info.
+- **Contact** — replaced the plain map with a stylized SVG service-radius
+  diagram (`src/components/ui/ServiceAreaMap.tsx`); swap for a real
+  embedded map/coordinates whenever you'd like literal geography instead
+  of the stylized version.
+
+
 
 ```bash
 npm install

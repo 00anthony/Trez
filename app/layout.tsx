@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "../lib/site-config";
 import StickyMobileCTA from "../components/ui/StickyMobileCTA";
+import AppShell from "../components/AppShell";
 
 /**
  * Fonts are loaded via <link> in <head> rather than next/font/google.
@@ -115,7 +116,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-ink text-concrete">
-        {children}
+        <AppShell>{children}</AppShell>
         <StickyMobileCTA />
       </body>
     </html>
