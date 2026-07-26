@@ -29,7 +29,7 @@ export default function Testimonials() {
             </div>
 
             {/* Google rating summary */}
-            <div className="flex items-center gap-4 border border-charcoal-2 bg-charcoal/50 px-6 py-5">
+            <div className="w-full md:w-auto flex items-center justify-between gap-4 border border-charcoal-2 bg-charcoal/50 px-3 md:px-6 py-5">
               <GoogleIcon className="h-8 w-8 shrink-0" />
               <div>
                 <div className="flex items-center gap-2">
@@ -46,12 +46,12 @@ export default function Testimonials() {
                   {siteConfig.google.reviewCount} Google Reviews
                 </p>
               </div>
-              <Button href={siteConfig.google.reviewUrl} variant="secondary" icon={false}>
-              <span className="flex items-center gap-2">
-                <GoogleIcon className="h-4 w-4" />
-                Write a Review
-              </span>
-            </Button>
+              <Button href={siteConfig.google.gmbUrl} variant="secondary" icon={false} className="" style={{paddingLeft: "12px", paddingRight: "12px"}}>
+                <span className="flex items-center gap-2">
+                  <GoogleIcon className="h-4 w-4" />
+                  See More
+                </span>
+              </Button>
             </div>
             
           </div>
@@ -102,12 +102,13 @@ export default function Testimonials() {
             Had a good experience with Trez? A review helps other Central
             Texas homeowners find us.
           </p>
-          <Button href={siteConfig.google.gmbUrl} variant="secondary" icon={false}>
+          <Button href={siteConfig.google.reviewUrl} variant="secondary" icon={false}>
             <span className="flex items-center gap-2">
               <GoogleIcon className="h-4 w-4" />
-              See More
+              Write a Review
             </span>
           </Button>
+          
         </Reveal>
 
         <GradeLine className="mt-24" />
