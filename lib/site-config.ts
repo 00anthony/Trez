@@ -28,6 +28,7 @@ export const siteConfig = {
     instagram: "https://instagram.com/trezconstructiongroup",
   },
   google: {
+    gmbUrl: "https://g.page/r/REPLACE-WITH-TREZ-PLACE-ID",
     // Placeholder — replace with the real Google Business Profile review link.
     reviewUrl: "https://g.page/r/REPLACE-WITH-TREZ-PLACE-ID/review",
     rating: 4.9,
