@@ -4,10 +4,10 @@ export const siteConfig = {
   tagline: "Concrete, Poured With Precision.",
   description:
     "Trez Construction Group is a premium concrete contractor and general contractor serving Greater Central Texas — driveways, patios, foundations, slabs, concrete repair, and residential & light commercial construction.",
-  url: "https://www.trezconstructiongroup.com",
-  phone: "(512) 555-0173",
-  phoneHref: "tel:+15125550173",
-  email: "estimates@trezconstructiongroup.com",
+  url: "https://www.trezconstruction.com",
+  phone: "(512) 216-3804",
+  phoneHref: "tel:+15122163804",
+  email: "info@trezconstructiongroup.com",
   serviceArea: "Greater Central Texas",
   serviceAreaCities: [
     "Austin",
@@ -24,8 +24,8 @@ export const siteConfig = {
   responsePromise: "We respond to every estimate request within one business day.",
   hours: "Mon–Sat, 7:00 AM – 6:00 PM",
   social: {
-    facebook: "https://facebook.com/trezconstructiongroup",
-    instagram: "https://instagram.com/trezconstructiongroup",
+    facebook: "https://www.facebook.com/people/Trez-Construction-Group/61591934102551/",
+    instagram: "https://www.instagram.com/trezconstruction/",
   },
   google: {
     gmbUrl: "https://g.page/r/REPLACE-WITH-TREZ-PLACE-ID",
