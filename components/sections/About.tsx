@@ -11,6 +11,7 @@ import SectionBackdrop from "../../components/ui/SectionBackdrop";
 import { siteConfig } from "../../lib/site-config";
 import { InsuranceLogo } from "../ui/InsuranceLogo";
 import { GoogleIcon } from "../ui/GoogleIcon";
+import Image from "next/image";
 
 export default function About() {
   type HeroStat = {
@@ -47,9 +48,9 @@ export default function About() {
             <Reveal>
               <Eyebrow>About Trez</Eyebrow>
               <h2 className="mt-5 font-display text-4xl font-bold uppercase tracking-tight text-concrete sm:text-5xl">
-                Built by people who
+                Built on the
                 <br />
-                pour it themselves
+                details that matter
               </h2>
             </Reveal>
 
@@ -63,26 +64,7 @@ export default function About() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="relative mt-10 aspect-[4/5] w-full max-w-sm overflow-hidden border border-charcoal-2"
             >
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(155deg, hsl(352 40% 12%) 0%, #141414 55%, #0a0a0a 100%)",
-                }}
-              />
-              <div
-                className="absolute inset-0 opacity-[0.14] mix-blend-overlay"
-                style={{
-                  backgroundImage:
-                    "repeating-linear-gradient(45deg, rgba(237,234,227,0.5) 0px, rgba(237,234,227,0.5) 1px, transparent 1px, transparent 16px)",
-                }}
-              />
-              <div className="absolute inset-0 flex items-end p-6">
-                <span className="font-mono text-[10px] tracking-[0.2em] text-concrete/40 uppercase">
-                  Crew Photo Placeholder
-                </span>
-              </div>
-              <span className="absolute top-4 right-4 h-2 w-2 bg-oxblood-light" />
+              <Image src="/about/about-poster.png" alt="poster" fill className="object-contain"/>
             </motion.div>
           </div>
 
@@ -96,11 +78,10 @@ export default function About() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="leading-relaxed">
-                We keep crews in-house rather than rotating subcontractors on
-                the concrete work itself, which means the same team that
-                quotes your soil conditions and base prep is the team that
-                pours and finishes it. That accountability is the whole
-                business model.
+                We believe quality concrete starts long before the pour. From understanding
+                Central Texas soil conditions to coordinating the right preparation and
+                craftsmanship, we stay involved throughout the process to make sure every
+                project is built on a proper foundation.
               </p>
             </Reveal>
             <Reveal delay={0.18}>

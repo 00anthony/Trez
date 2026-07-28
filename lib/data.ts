@@ -310,9 +310,9 @@ export const processSteps = [
   },
   {
     step: "02",
-    title: "Site Visit",
+    title: "Project Consultation",
     description:
-      "We walk the site with you, measure, assess soil and drainage conditions, and put together a detailed, itemized quote.",
+      "We'll discuss your project, answer any questions, and provide a detailed estimate with pricing, timeline, and recommendations."
   },
   {
     step: "03",
