@@ -43,7 +43,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          controls
+          
           poster=""
         >
           <source src="/video/hero-loop-720p.mp4" type="video/mp4" />
