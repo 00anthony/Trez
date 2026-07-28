@@ -410,7 +410,7 @@ export const faqs = [
   {
     question: "How long does a typical concrete driveway take to install?",
     answer:
-      "Most residential driveways take 4–7 days from excavation to finish, depending on size and finish type. Concrete needs roughly 7 days to cure before vehicle traffic, though we'll give you an exact timeline during your site visit.",
+      "Most residential driveways take 4–7 days from excavation to finish, depending on size and finish type. Concrete needs roughly 7 days to cure before vehicle traffic, though we'll give you an exact timeline during your site consultation.",
   },
   {
     question: "Do you handle permits and inspections?",
@@ -425,12 +425,7 @@ export const faqs = [
   {
     question: "What's included in a free estimate?",
     answer:
-      "A site visit, measurements, a soil and drainage assessment, and a written, itemized quote broken down by material, labor, and finish — with no obligation to proceed.",
-  },
-  {
-    question: "Do you offer financing?",
-    answer:
-      "We work with a small number of financing partners for larger residential and commercial projects. Ask your estimator during the site visit for current options.",
+      "A detailed follow up, measurements, a soil and drainage assessment, and a written, itemized quote broken down by material, labor, and finish — with no obligation to proceed.",
   },
   {
     question: "What areas do you serve?",
@@ -445,6 +440,6 @@ export const faqs = [
   {
     question: "How much does a concrete project typically cost?",
     answer:
-      "Cost depends heavily on square footage, finish type, and site prep needs. A site visit lets us give you an accurate, itemized number rather than a rough range that misses the specifics of your lot.",
+      "Cost depends heavily on square footage, finish type, and site prep needs. Our free estimate lets us give you an accurate, itemized number rather than a rough range that misses the specifics of your lot.",
   },
 ];
