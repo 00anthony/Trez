@@ -46,12 +46,18 @@ export default function Testimonials() {
                   {siteConfig.google.reviewCount} Google Reviews
                 </p>
               </div>
-              <Button href={siteConfig.google.gmbUrl} variant="secondary" icon={false} className="" style={{paddingLeft: "12px", paddingRight: "12px"}}>
+              <a 
+                href={siteConfig.google.gmbUrl} 
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="group relative inline-flex items-center justify-center gap-2 whitespace-nowrap px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-concrete border border-concrete/25 hover:border-concrete/60 backdrop-blur-sm" 
+                style={{paddingLeft: "12px", paddingRight: "12px"}}
+              >
                 <span className="flex items-center gap-2">
                   <GoogleIcon className="h-4 w-4" />
                   See More
                 </span>
-              </Button>
+              </a>
             </div>
             
           </div>
@@ -102,12 +108,18 @@ export default function Testimonials() {
             Had a good experience with Trez? A review helps other Central
             Texas homeowners find us.
           </p>
-          <Button href={siteConfig.google.reviewUrl} variant="secondary" icon={false}>
+          <a 
+            href={siteConfig.google.reviewUrl} 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="group relative inline-flex items-center justify-center gap-2 whitespace-nowrap px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-concrete border border-concrete/25 hover:border-concrete/60 backdrop-blur-sm" 
+            
+          >
             <span className="flex items-center gap-2">
               <GoogleIcon className="h-4 w-4" />
               Write a Review
             </span>
-          </Button>
+          </a>
           
         </Reveal>
 

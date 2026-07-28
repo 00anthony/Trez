@@ -24,6 +24,8 @@ export default function Footer() {
               <a
                 href={siteConfig.social.facebook}
                 aria-label="Facebook"
+                target="_blank"
+                  rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center border border-charcoal-2 text-concrete/60 hover:border-oxblood-light hover:text-concrete"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
@@ -33,6 +35,8 @@ export default function Footer() {
               <a
                 href={siteConfig.social.instagram}
                 aria-label="Instagram"
+                target="_blank"
+                  rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center border border-charcoal-2 text-concrete/60 hover:border-oxblood-light hover:text-concrete"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
