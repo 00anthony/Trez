@@ -120,9 +120,9 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "westlake-driveway",
-    title: "Westlake Driveway",
-    location: "Westlake Hills, TX",
+    slug: "montopolis-driveway",
+    title: "Montopolis Driveway",
+    location: "S Austin, TX",
     category: "Driveways",
     service: "Stamped Concrete Driveway",
     timeline: "6 days",
@@ -138,9 +138,9 @@ export const projects: Project[] = [
     afterSrc: "/projects/stamped-driveway-after.png",
   },
   {
-    slug: "barton-creek-pool-deck",
-    title: "Barton Creek Pool Deck",
-    location: "Austin, TX",
+    slug: "wimberly-pool-deck",
+    title: "Wimberly Pool Deck",
+    location: "Wimberly, TX",
     category: "Patios",
     service: "Cantilevered Pool Deck",
     timeline: "9 days",
@@ -173,9 +173,9 @@ export const projects: Project[] = [
     afterSrc: "/projects/rr-retail-pad-after.jpg",
   },
   {
-    slug: "cedar-park-new-build",
-    title: "Cedar Park New-Build Slab",
-    location: "Cedar Park, TX",
+    slug: "creedmoor-new-build",
+    title: "Creedmoor New-Build Slab",
+    location: "Creedmoor, TX",
     category: "Residential",
     service: "Post-Tensioned Foundation",
     timeline: "2 weeks",
@@ -190,9 +190,9 @@ export const projects: Project[] = [
     afterSrc: "/projects/new-build-after.png",
   },
   {
-    slug: "georgetown-foundation-repair",
-    title: "Georgetown Foundation Repair",
-    location: "Georgetown, TX",
+    slug: "buda-foundation-repair",
+    title: "Buda Foundation Repair",
+    location: "Buda, TX",
     category: "Repairs",
     service: "Slab Leveling & Crack Injection",
     timeline: "4 days",
@@ -258,9 +258,9 @@ export const projects: Project[] = [
     afterSrc: "/projects/sidewalk-after.jpg",
   },
   {
-    slug: "lockhart-garage-slab",
-    title: "Lockhart Garage Slab",
-    location: "Lockhart, TX",
+    slug: "bastrop-garage-slab",
+    title: "Bastrop Garage Slab",
+    location: "Bastrop, TX",
     category: "Slabs",
     service: "Reinforced Concrete Garage Slab",
     timeline: "4 days",
@@ -278,6 +278,7 @@ export const projects: Project[] = [
     beforeSrc: "/projects/lockhart-garage-before.png",
     afterSrc: "/projects/lockhart-garage-after.png",
   },
+  /*
   {
     slug: "san-marcos-front-patio",
     title: "San Marcos Front Patio",
@@ -299,6 +300,7 @@ export const projects: Project[] = [
     beforeSrc: "/projects/sm-front-patio-before.png",
     afterSrc: "/projects/sm-front-patio-after.png",
   },
+  */
 ];
 
 export const processSteps = [
