@@ -56,8 +56,7 @@ export default function Services() {
             <br />& construction
           </h2>
           <p className="mt-5 max-w-lg text-concrete/65">
-            From a single driveway to a full-scope build, every service is
-            handled in-house by crews who specialize in it.
+            From a single driveway to a full-scope concrete services, all handled by our network of vetted professionals.
           </p>
         </Reveal>
 
@@ -156,7 +155,7 @@ export default function Services() {
             We build custom concrete &amp; construction solutions
           </h3>
           <p className="mt-4 max-w-md text-sm text-concrete/60">
-            Send us the details and we&rsquo;ll scope it — no project is too
+            Send us the details and we&rsquo;ll review the scope. No project is too
             far outside the standard list.
           </p>
           <Button href="#contact" variant="primary" className="mt-8">
