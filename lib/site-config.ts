@@ -32,7 +32,7 @@ export const siteConfig = {
     // Placeholder — replace with the real Google Business Profile review link.
     reviewUrl: "https://g.page/r/REPLACE-WITH-TREZ-PLACE-ID/review",
     rating: 4.9,
-    reviewCount: 214,
+    reviewCount: 24,
   },
   // Keep order in sync with HeroStats in Hero.tsx
   stats: [

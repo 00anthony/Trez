@@ -360,7 +360,7 @@ export const testimonials = [
     quote:
       "Trez replaced our entire driveway in less than a week and it hasn't shown a single crack through two summers.",
     author: "Marcus Alvarado",
-    location: "Westlake Hills, TX",
+    location: "Kyle, TX",
     rating: 5,
     date: "3 weeks ago",
   },
@@ -368,7 +368,7 @@ export const testimonials = [
     quote:
       "Every question I had was answered before I had to ask it. The itemized quote had zero surprises on the final invoice.",
     author: "Priya Chandran",
-    location: "Round Rock, TX",
+    location: "Austin, TX",
     rating: 5,
     date: "1 month ago",
   },
@@ -376,7 +376,7 @@ export const testimonials = [
     quote:
       "We interviewed four contractors. Trez was the only one who talked about our soil report before talking about price.",
     author: "David Nguyen",
-    location: "Georgetown, TX",
+    location: "Buda, TX",
     rating: 5,
     date: "2 months ago",
   },
@@ -384,7 +384,7 @@ export const testimonials = [
     quote:
       "Professional crew, clean job site every single day, and they finished ahead of the schedule they gave us.",
     author: "Teresa Whitfield",
-    location: "Austin, TX",
+    location: "San Marcos, TX",
     rating: 5,
     date: "2 months ago",
   },
@@ -392,7 +392,7 @@ export const testimonials = [
     quote:
       "Communication was excellent from the estimate through the final walkthrough. Would hire again without hesitation.",
     author: "Sarah Kimble",
-    location: "Cedar Park, TX",
+    location: "Lockhart, TX",
     rating: 5,
     date: "3 months ago",
   },
@@ -400,7 +400,7 @@ export const testimonials = [
     quote:
       "Fair pricing, and they caught a drainage issue our last contractor missed entirely before it became a real problem.",
     author: "James Ortiz",
-    location: "Pflugerville, TX",
+    location: "Wimberly, TX",
     rating: 5,
     date: "4 months ago",
   },
@@ -415,7 +415,7 @@ export const faqs = [
   {
     question: "Do you handle permits and inspections?",
     answer:
-      "Yes. As a licensed general contractor, we pull the required permits and coordinate municipal or HOA inspections as part of your project scope.",
+      "Permit requirements vary depending on the project and location. We help guide you through the process and coordinate with the appropriate parties when permits or inspections are required.",
   },
   {
     question: "Why does concrete crack in Central Texas specifically?",
@@ -435,7 +435,7 @@ export const faqs = [
   {
     question: "What areas do you serve?",
     answer:
-      "We serve the Greater Central Texas region, including Austin, Georgetown, Round Rock, Cedar Park, Pflugerville, Leander, Temple, Killeen, Waco, and San Marcos.",
+      "We serve the Greater Central Texas region, including Austin, Kyle, Buda, San Marcos, Lockhart, Dripping Springs, Wimberly, Manor, Cedar Creek, and Oak Hill.",
   },
   {
     question: "Is there a warranty on your concrete work?",
