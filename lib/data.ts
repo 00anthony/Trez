@@ -82,6 +82,17 @@ export const services: Service[] = [
     image: "/services/light-commercial.avif",
   },
   {
+    slug: "custom-project",
+    name: "Custom Project",
+    short: "One point of contact from permit to final walkthrough.",
+    description:
+      "Full-service custom projects where we coordinate every trade on your project so you have a single point of accountability.",
+    bullets: ["Permitting & inspections", "Subcontractor coordination", "Fixed-scope project timelines"],
+    image: "/services/blueprint.jpg",
+  },
+
+  /*
+  {
     slug: "general-contracting",
     name: "General Contracting",
     short: "One point of contact from permit to final walkthrough.",
@@ -90,6 +101,7 @@ export const services: Service[] = [
     bullets: ["Permitting & inspections", "Subcontractor coordination", "Fixed-scope project timelines"],
     image: "/services/blueprint.jpg",
   },
+  */
 ];
 
 export type ProjectCategory =
