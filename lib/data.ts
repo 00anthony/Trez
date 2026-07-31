@@ -16,7 +16,7 @@ export const services: Service[] = [
     description:
       "Engineered driveways that resist cracking through triple-digit summers and clay-soil shift, finished to match your home's architecture.",
     bullets: ["Reinforced base & rebar grid", "Broom, stamped, or exposed aggregate", "Expansion joint engineering"],
-    image: "/services/concrete-driveway.jpg",
+    image: "/services/concrete-driveway.webp",
   },
   {
     slug: "patios",
@@ -34,7 +34,7 @@ export const services: Service[] = [
     description:
       "ADA-aware sidewalk and walkway pours for residential lots, subdivisions, and commercial properties across Central Texas.",
     bullets: ["ADA slope compliance", "HOA & municipal permitting support", "Decorative border options"],
-    image: "/services/sidewalk.jpg",
+    image: "/services/sidewalk.webp",
   },
   {
     slug: "foundations",
@@ -52,7 +52,7 @@ export const services: Service[] = [
     description:
       "Flat, level, load-rated slabs for garages, workshops, RV pads, and equipment pads — poured to the tolerance your project needs.",
     bullets: ["Vapor barrier & moisture control", "Load-rated for shops & equipment", "Fast-track scheduling available"],
-    image: "/services/slab-foundation.jpeg",
+    image: "/services/slab-foundation.webp",
   },
   {
     slug: "concrete-repair",
@@ -88,7 +88,7 @@ export const services: Service[] = [
     description:
       "Full-service custom projects where we coordinate every trade on your project so you have a single point of accountability.",
     bullets: ["Permitting & inspections", "Subcontractor coordination", "Fixed-scope project timelines"],
-    image: "/services/blueprint.jpg",
+    image: "/services/blueprint.webp",
   },
 
   /*
@@ -146,8 +146,8 @@ export const projects: Project[] = [
     tags: ["Stamped", "Reinforced Base", "3-Car"],
     beforeLabel: "Cracked asphalt, poor drainage",
     afterLabel: "Ashlar-slate stamped concrete",
-    beforeSrc: "/projects/stamped-driveway-before.png",
-    afterSrc: "/projects/stamped-driveway-after.png",
+    beforeSrc: "/projects/stamped-driveway-before.webp",
+    afterSrc: "/projects/stamped-driveway-after.webp",
   },
   {
     slug: "wimberly-pool-deck",
@@ -164,8 +164,8 @@ export const projects: Project[] = [
     tags: ["Cool-Touch Finish", "Drainage System"],
     beforeLabel: "Bare dirt & failing pavers",
     afterLabel: "Knockdown-finish cantilevered deck",
-    beforeSrc: "/projects/pool-deck-before.png",
-    afterSrc: "/projects/pool-deck-after.png",
+    beforeSrc: "/projects/pool-deck-before.webp",
+    afterSrc: "/projects/pool-deck-after.webp",
   },
   {
     slug: "round-rock-retail-pad",
@@ -198,8 +198,8 @@ export const projects: Project[] = [
     tags: ["Post-Tensioned", "New Construction"],
     beforeLabel: "Graded & staked lot",
     afterLabel: "Engineered post-tensioned slab",
-    beforeSrc: "/projects/new-build-before.png",
-    afterSrc: "/projects/new-build-after.png",
+    beforeSrc: "/projects/new-build-before.webp",
+    afterSrc: "/projects/new-build-after.webp",
   },
   {
     slug: "buda-foundation-repair",
@@ -232,8 +232,8 @@ export const projects: Project[] = [
     tags: ["Broom Finish", "Firepit Pad"],
     beforeLabel: "Undeveloped backyard",
     afterLabel: "960 sq ft patio + firepit slab",
-    beforeSrc: "/projects/back-patio-before.png",
-    afterSrc: "/projects/back-patio-after.jpg",
+    beforeSrc: "/projects/back-patio-before.webp",
+    afterSrc: "/projects/back-patio-after.webp",
   },
   {
     slug: "leander-shop-slab",
@@ -321,7 +321,7 @@ export const processSteps = [
     title: "Request Estimate",
     description:
       "Tell us about your project through the form or a call. Most estimate requests get a response within one business day.",
-    image: "/process/request-estimate.jpeg",
+    image: "/process/request-estimate.webp",
   },
   {
     step: "02",
@@ -342,7 +342,7 @@ export const processSteps = [
     title: "Final Walkthrough",
     description:
       "We walk the finished project with you, confirm every detail matches spec, and hand over your warranty documentation.",
-    image: "/process/final-walkthrough.jpeg",
+    image: "/process/final-walkthrough.webp",
   },
 ];
 
