@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { Play } from "lucide-react";
+import VideoEmbed from "../ui/VideoEmbed";
 import Container from "../../components/ui/Container";
 import Eyebrow from "../../components/ui/Eyebrow";
 import GradeLine from "../../components/ui/GradeLine";
@@ -20,9 +19,9 @@ export default function WhyChooseUs() {
         <Reveal>
           <Eyebrow>Why Trez</Eyebrow>
           <h2 className="mt-5 max-w-xl font-display text-4xl font-bold uppercase tracking-tight text-concrete sm:text-5xl md:text-6xl">
-            The difference is
+            From Placement
             <br />
-            in the ground work
+            To Performance
           </h2>
         </Reveal>
 
@@ -41,7 +40,12 @@ export default function WhyChooseUs() {
                     {item.description}
                   </p>
 
-                  {item.media?.enabled && <MediaSlot label={item.media.label} />}
+                  {item.video && (
+                    <VideoEmbed
+                      youtubeId={item.video.youtubeId}
+                      title={item.video.title}
+                    />
+                  )}
                 </div>
               </div>
             </Reveal>
@@ -54,41 +58,3 @@ export default function WhyChooseUs() {
   );
 }
 
-/**
- * Optional educational-media slot — explainer videos, estimate
- * walkthroughs, pour demonstrations, case studies. Toggle a benefit's
- * `media.enabled` flag in lib/data.ts to show/hide this per card; wire
- * `onClick` up to a real video modal / player once assets exist.
- */
-function MediaSlot({ label }: { label: string }) {
-  const [hover, setHover] = useState(false);
-
-  return (
-    <button
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className="group relative mt-5 flex aspect-video w-full max-w-sm items-center justify-center overflow-hidden border border-charcoal-2 bg-ink text-left"
-      aria-label={label}
-    >
-      <div
-        className="absolute inset-0 opacity-[0.16] mix-blend-overlay transition-transform duration-500"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, rgba(237,234,227,0.5) 0px, rgba(237,234,227,0.5) 1px, transparent 1px, transparent 14px)",
-          transform: hover ? "scale(1.06)" : "scale(1)",
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-      <span
-        className={`relative flex h-11 w-11 items-center justify-center rounded-full border border-oxblood-light/70 bg-ink/70 backdrop-blur-sm transition-transform duration-300 ${
-          hover ? "scale-110" : ""
-        }`}
-      >
-        <Play className="ml-0.5 h-4 w-4 fill-oxblood-light text-oxblood-light" />
-      </span>
-      <span className="absolute bottom-3 left-3 font-mono text-[10px] tracking-[0.12em] text-concrete/70 uppercase">
-        {label}
-      </span>
-    </button>
-  );
-}

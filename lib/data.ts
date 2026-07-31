@@ -344,28 +344,40 @@ export const processSteps = [
 
 export const whyChooseUs = [
   {
-    title: "Engineered for Texas Clay",
+    title: "CONCRETE PLACEMENT · 3:19",
     description:
-      "Central Texas' expansive clay soil is why concrete fails elsewhere. Every pour is engineered for the ground it sits on.",
-    media: { enabled: true, label: "Soil Engineering Explainer" },
+      "See how concrete pumps efficiently place material when ready-mix trucks cannot reach the final pour location.",
+    video: {
+      youtubeId: "bEsMVzFL6Cw",
+      title: "WATCH: CONCRETE PLACEMENT · 3:19",
+    },
   },
   {
-    title: "Licensed, Bonded & Insured",
+    title: "FINISHING THE SURFACE · 3:14",
     description:
-      "Fully licensed general contractor with bonding and liability coverage on every residential and commercial project.",
-    media: { enabled: true, label: "Credentials Walkthrough" },
+      "Watch a demonstration of how a fresno trowel is used during the concrete finishing process.",
+    video: {
+      youtubeId: "4XKUtijyEsE",
+      title: "WATCH: CONCRETE FINISHING · 3:14",
+    },
   },
   {
-    title: "In-House Crews",
+    title: "CONTROL JOINTS · 4:22",
     description:
-      "No rotating subcontractors on the concrete work itself — the crew that quotes your project is the crew that pours it.",
-    media: { enabled: true, label: "Watch: A Pour Day With Our Crew" },
+      "Learn how cut-off saws are used to establish contraction and control joints in concrete.",
+    video: {
+      youtubeId: "GqsHaxO4N7Q",
+      title: "WATCH: MANAGING CRACKS · 4:22"
+    },
   },
   {
-    title: "Written, Itemized Quotes",
+    title: "CURING & PROTECTION · 4:17",
     description:
       "Every estimate is itemized by material, labor, and finish, with no allowances hidden in vague line items.",
-    media: { enabled: true, label: "Watch: Reading Your Estimate" },
+    video: {
+      youtubeId: "552HmSJrLGk",
+      title: "WATCH: CURING & SEALING · 4:17"
+    },
   },
 ];
 
