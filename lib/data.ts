@@ -321,24 +321,28 @@ export const processSteps = [
     title: "Request Estimate",
     description:
       "Tell us about your project through the form or a call. Most estimate requests get a response within one business day.",
+    image: "/process/request-estimate.jpeg",
   },
   {
     step: "02",
     title: "Project Consultation",
     description:
-      "We'll discuss your project, answer any questions, and provide a detailed estimate with pricing, timeline, and recommendations."
+      "We'll discuss your project, answer any questions, and provide a detailed estimate with pricing, timeline, and recommendations.",
+    image: "/process/project-consultation.jpg",
   },
   {
     step: "03",
     title: "Construction",
     description:
       "Your crew lead keeps you updated at every stage — excavation, forming, reinforcement, pour, and finish.",
+    image: "/process/construction.jpg",
   },
   {
     step: "04",
     title: "Final Walkthrough",
     description:
       "We walk the finished project with you, confirm every detail matches spec, and hand over your warranty documentation.",
+    image: "/process/final-walkthrough.jpeg",
   },
 ];
 
