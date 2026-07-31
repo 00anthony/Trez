@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import Image from "next/image";
 import Container from "../../components/ui/Container";
 import Eyebrow from "../../components/ui/Eyebrow";
 import Reveal from "../../components/ui/Reveal";
@@ -28,9 +29,9 @@ export default function Process() {
       </Container>
 
       {/* Desktop: stacked diagonal image panels */}
-      <div className="relative mt-16 hidden md:block">
-        {processSteps.map((step, i) => (
-          <ProcessPanel key={step.step} step={step} index={i} />
+      <div className="md:grid md:grid-cols-4 gap-6 mt-16 hidden  ">
+        {processSteps.map((step, ) => (
+          <ProcessPanel key={step.step} step={step} />
         ))}
       </div>
 
@@ -44,51 +45,37 @@ export default function Process() {
 
 function ProcessPanel({
   step,
-  index,
 }: {
   step: (typeof processSteps)[number];
-  index: number;
 }) {
   return (
-    <div
-      className="group relative flex h-[280px] w-full items-center overflow-hidden"
-      style={{
-        clipPath:
-          index % 2 === 0
-            ? "polygon(0 0, 100% 0, 100% 100%, 0 92%)"
-            : "polygon(0 0, 100% 8%, 100% 100%, 0 100%)",
-        marginTop: index === 0 ? 0 : "-28px",
-      }}
-    >
-      <div
-        className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105"
-        style={{
-          background: `linear-gradient(120deg, hsl(${hues[index % hues.length]} 40% 12%) 0%, #141414 55%, #0a0a0a 100%)`,
-        }}
-      >
-        <div
-          className="h-full w-full opacity-[0.12] mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, rgba(237,234,227,0.5) 0px, rgba(237,234,227,0.5) 1px, transparent 1px, transparent 18px)",
-          }}
-        />
+    <div className="group relative h-[460px] overflow-hidden border border-charcoal-2">
+      <Image
+        src={step.image}
+        alt={step.title}
+        fill
+        sizes="25vw"
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+
+      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+
+      <div className="absolute inset-x-0 bottom-0 p-7">
+        <span className="font-mono text-sm text-oxblood-light">
+          {step.step}
+        </span>
+
+        <h3 className="mt-3 font-display text-3xl font-bold uppercase tracking-tight text-concrete">
+          {step.title}
+        </h3>
+
+        <p className="mt-3 text-sm leading-relaxed text-concrete/80">
+          {step.description}
+        </p>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/45 to-ink/10" />
 
-      <Container className="relative">
-        <div className="max-w-md py-10">
-          <span className="font-mono text-sm text-oxblood-light">{step.step}</span>
-          <h3 className="mt-3 font-display text-3xl font-bold uppercase tracking-tight text-concrete lg:text-4xl">
-            {step.title}
-          </h3>
-          <p className="mt-3 text-sm leading-relaxed text-concrete/70 lg:text-base">
-            {step.description}
-          </p>
-        </div>
-      </Container>
-
-      <span className="pointer-events-none absolute -right-4 bottom-2 select-none font-display text-[9rem] font-black leading-none text-concrete/[0.05]">
+      <span className="pointer-events-none absolute right-3 top-3 font-display text-6xl font-black text-white/40">
         {step.step}
       </span>
     </div>
@@ -158,11 +145,12 @@ function ProcessCarousel() {
             className="relative flex w-[78vw] shrink-0 snap-center flex-col justify-end overflow-hidden border border-charcoal-2"
             style={{ height: 340 }}
           >
-            <div
-              className="absolute inset-0"
-              style={{
-                background: `linear-gradient(150deg, hsl(${hues[i % hues.length]} 40% 12%) 0%, #141414 55%, #0a0a0a 100%)`,
-              }}
+            <Image
+                src={step.image}
+                alt={step.title}
+                fill
+                sizes="80vw"
+                className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
             <div className="relative p-6">
