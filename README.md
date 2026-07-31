@@ -68,12 +68,50 @@ npm run start     # serve the production build
    social links all live in one place: `src/lib/site-config.ts`.
 4. **Copy & data** — services, projects, testimonials, FAQ, and process
    steps all live in `src/lib/data.ts`.
-5. **Contact form backend** — `src/app/api/contact/route.ts` currently
-   just logs submissions. Wire it up to your CRM, an email provider
-   (e.g. Resend/Postmark), or a Slack webhook.
+5. **Contact form backend** — `src/app/api/contact/route.ts` is fully
+   wired to Resend (client notification + user confirmation emails) and
+   Google Sheets (lead log), with basic IP rate limiting. Copy
+   `.env.example` to `.env.local` and fill in the values — see
+   "Contact form integrations" below for the full setup.
 6. **OG image** — add `public/og-image.jpg` (1200×630) for social share
    previews; referenced in `src/app/layout.tsx` metadata.
 7. **Favicon / app icon** — replace `src/app/favicon.ico`.
+
+## Contact form integrations
+
+The `/api/contact` route does three things on every submission:
+
+1. **Emails the client** (you) the full lead — name, phone, email,
+   service, project details, and any attached photos — via
+   [Resend](https://resend.com). Reply-to is set to the customer's
+   email, so replying goes straight to them.
+2. **Emails the customer** a confirmation with what they submitted.
+3. **Appends a row to a Google Sheet** — timestamp, name, phone, email,
+   service, message, and photo count — via a Google service account.
+
+All three are gated by a basic in-memory rate limiter (`src/lib/rate-limit.ts`,
+5 requests / 10 minutes per IP by default) to slow down spam bots. Note
+that in-memory state resets on redeploy and isn't shared across multiple
+serverless instances — if you deploy somewhere that scales the API route
+horizontally, swap it for `@upstash/ratelimit` (Redis-backed) using the
+same `rateLimit()` call signature.
+
+**Setup:**
+
+1. Copy `.env.example` to `.env.local`.
+2. **Resend** — create an API key at resend.com/api-keys, verify a
+   sending domain, and set `RESEND_API_KEY` + `RESEND_FROM_EMAIL`. Set
+   `CLIENT_NOTIFICATION_EMAIL` to whichever inbox should receive leads.
+3. **Google Sheets** — create a Google Cloud service account, enable the
+   Sheets API, download its JSON key, and share your target sheet with
+   the service account's email (Editor access). Set
+   `GOOGLE_SHEETS_CLIENT_EMAIL`, `GOOGLE_SHEETS_PRIVATE_KEY`,
+   `GOOGLE_SHEET_ID`, and `GOOGLE_SHEET_TAB_NAME`. Full steps are
+   commented at the top of `src/lib/google-sheets.ts`.
+
+If `RESEND_API_KEY` or `GOOGLE_SHEET_ID` are left unset, the route skips
+that integration (logging a warning) rather than failing the whole
+request — handy for local development before secrets are configured.
 
 ## SEO
 
@@ -86,18 +124,17 @@ npm run start     # serve the production build
 ## Structure
 
 ```
-src/
-  app/
-    layout.tsx        root layout, fonts, metadata, JSON-LD
-    page.tsx           assembles all sections
-    api/contact/       lead form submission endpoint
-    robots.ts / sitemap.ts
-  components/
-    sections/          one file per page section (Hero, Services, ...)
-    ui/                 shared primitives (Button, GradeLine, Reveal, ...)
-  lib/
-    site-config.ts      company info, single source of truth
-    data.ts              services / projects / testimonials / FAQ content
+app/
+  layout.tsx        root layout, fonts, metadata, JSON-LD
+  page.tsx           assembles all sections
+  api/contact/       lead form submission endpoint
+  robots.ts / sitemap.ts
+components/
+  sections/          one file per page section (Hero, Services, ...)
+  ui/                 shared primitives (Button, GradeLine, Reveal, ...)
+lib/
+  site-config.ts      company info, single source of truth
+  data.ts              services / projects / testimonials / FAQ content
 ```
 
 ## Accessibility & performance notes already built in
