@@ -57,7 +57,7 @@ export async function appendLeadToSheet(lead: LeadRow): Promise<void> {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: sheetId,
-    range: `${tabName}!A1`,
+    range: `${tabName}!B2`,
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {
