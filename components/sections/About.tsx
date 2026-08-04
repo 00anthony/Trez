@@ -24,7 +24,7 @@ export default function About() {
       siteConfig.stats[0], // Projects Completed
       {
         icon: (
-          <InsuranceLogo className="h-8 w-auto fill-white"/>
+          <InsuranceLogo className="w-auto fill-white"/>
         ),
         value: siteConfig.stats[1].value,   // "100%"
         label: siteConfig.stats[1].label,   // "Licensed & Insured"
@@ -64,7 +64,13 @@ export default function About() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="relative mt-10 aspect-[4/5] w-full max-w-sm overflow-hidden border border-charcoal-2"
             >
-              <Image src="/about/about-poster.png" alt="poster" fill className="object-contain"/>
+              <Image 
+                src="/about/about-poster.png" 
+                alt="poster" 
+                fill
+                sizes="" 
+                className="object-contain"
+              />
             </motion.div>
           </div>
 

@@ -77,6 +77,7 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
               src="/logo/logo-icon-light.png"
               alt=""
               fill
+              sizes="(min-width: 768px) 80px, 56px"
               className="object-contain"
               priority
             />
@@ -95,6 +96,7 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
                 src="/logo/logo-wordmark-header-light.png"
                 alt="Trez"
                 fill
+                sizes="(min-width: 768px) 210px, 150px"
                 className="object-contain object-left"
                 priority
               />
@@ -110,6 +112,7 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
                 src="/logo/logo-wordmark-subtext-light.png"
                 alt="Construction Group"
                 fill
+                sizes="(min-width: 768px) 210px, 150px"
                 className="object-contain object-left"
                 priority
               />

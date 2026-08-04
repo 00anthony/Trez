@@ -13,7 +13,13 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <a href="#top" className="flex items-left">
               <span className="relative h-22 w-64 shrink-0 object-left">
-                <Image src="/logo/logo-full-light.png" alt="logo" fill className="object-contain" />
+                <Image 
+                  src="/logo/logo-full-light.png" 
+                  alt="logo" 
+                  width={248}
+                  height={96} 
+                  className="object-contain" 
+                />
               </span>
               
             </a>

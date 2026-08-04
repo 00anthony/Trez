@@ -20,7 +20,7 @@ export default function Hero() {
     siteConfig.stats[0], // Projects Completed
     {
       icon: (
-        <InsuranceLogo className="h-8 w-auto fill-white"/>
+        <InsuranceLogo className=" "/>
       ),
       value: siteConfig.stats[1].value,   // "100%"
       label: siteConfig.stats[1].label,   // "Licensed & Insured"
