@@ -7,7 +7,7 @@ export const siteConfig = {
   url: "https://www.trezconstruction.com",
   phone: "(512) 216-3804",
   phoneHref: "tel:+15122163804",
-  email: "info@trezconstructiongroup.com",
+  email: "info@trezconstruction.com",
   serviceArea: "Greater Central Texas",
   serviceAreaCities: [
     "Austin",
