@@ -37,7 +37,7 @@ export const siteConfig = {
   // Keep order in sync with HeroStats in Hero.tsx
   stats: [
     { value: "26+", label: "Projects Completed" },
-    { value: "100%", label: "Licensed & Insured" },
+    { value: "100%", label: "Insured" },
     { value: "24hr", label: "Estimate Turnaround" },
   ],
   geo: {

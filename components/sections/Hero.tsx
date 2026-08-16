@@ -23,7 +23,7 @@ export default function Hero() {
         <InsuranceLogo className=" "/>
       ),
       value: siteConfig.stats[1].value,   // "100%"
-      label: siteConfig.stats[1].label,   // "Licensed & Insured"
+      label: siteConfig.stats[1].label,   // "Insured"
     },
     {
       icon: <GoogleIcon className="h-4 w-4" />,

@@ -1,7 +1,7 @@
 import { ShieldCheck, Star, FileCheck2, Clock } from "lucide-react";
 
 const items = [
-  { icon: ShieldCheck, label: "Licensed & Insured General Contractor" },
+  { icon: ShieldCheck, label: "Fully Insured General Contractor" },
   { icon: Star, label: "4.9/5 Average Rating — 24+ Reviews" },
   { icon: FileCheck2, label: "Written, Itemized Estimates" },
   { icon: Clock, label: "24-Hour Estimate Response" },

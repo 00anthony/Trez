@@ -27,7 +27,7 @@ export default function About() {
           <InsuranceLogo className="w-auto fill-white"/>
         ),
         value: siteConfig.stats[1].value,   // "100%"
-        label: siteConfig.stats[1].label,   // "Licensed & Insured"
+        label: siteConfig.stats[1].label,   // "Insured"
       },
       {
         icon: <GoogleIcon className="h-4 w-4" />,
