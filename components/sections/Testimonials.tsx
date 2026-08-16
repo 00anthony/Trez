@@ -50,12 +50,12 @@ export default function Testimonials() {
                 href={siteConfig.google.gmbUrl} 
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="group relative inline-flex items-center justify-center gap-2 whitespace-nowrap px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-concrete border border-concrete/25 hover:border-concrete/60 backdrop-blur-sm" 
+                className="group relative inline-flex items-center justify-center gap-2 whitespace-nowrap px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-transparent text-concrete border border-concrete/25 hover:border-concrete/60" 
                 style={{paddingLeft: "12px", paddingRight: "12px"}}
               >
                 <span className="flex items-center gap-2">
-                  <GoogleIcon className="h-4 w-4" />
-                  See More
+                  <GoogleIcon className="h-4 w-4 hidden md:block" />
+                  More Reviews
                 </span>
               </a>
             </div>
