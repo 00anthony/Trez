@@ -75,7 +75,7 @@ export default function Services() {
                 className="group relative flex min-h-[400px] flex-col justify-end overflow-hidden border border-charcoal-2 md:min-h-[440px]"
               >
                 <Link
-                  href="/#contact"  
+                  href={`/services/${service.slug}`}
                 >
                   {/* full-bleed background */}
                   <div className="absolute inset-0 ">
