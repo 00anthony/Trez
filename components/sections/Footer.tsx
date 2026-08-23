@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Container from "../../components/ui/Container";
 import { siteConfig } from "../../lib/site-config";
 import { services } from "../../lib/data";
@@ -11,18 +12,18 @@ export default function Footer() {
       <Container>
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <a href="#top" className="flex items-left">
+            <Link href="/#top" className="flex items-left">
               <span className="relative h-22 w-64 shrink-0 object-left">
-                <Image 
-                  src="/logo/logo-full-light.png" 
-                  alt="logo" 
+                <Image
+                  src="/logo/logo-full-light.png"
+                  alt="logo"
                   width={248}
-                  height={96} 
-                  className="object-contain" 
+                  height={96}
+                  className="object-contain"
                 />
               </span>
-              
-            </a>
+
+            </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-concrete/55">
               Premium concrete and general contracting for {siteConfig.serviceArea}.
             </p>
@@ -61,9 +62,9 @@ export default function Footer() {
             <ul className="mt-5 space-y-2.5">
               {services.slice(0, 6).map((s) => (
                 <li key={s.slug}>
-                  <a href="#services" className="text-sm text-concrete/65 hover:text-concrete">
+                  <Link href={`/services/${s.slug}`} className="text-sm text-concrete/65 hover:text-concrete">
                     {s.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -75,12 +76,12 @@ export default function Footer() {
             </h4>
             <ul className="mt-5 space-y-2.5">
               {[
-                { label: "About", href: "#about" },
-                { label: "Projects", href: "#projects" },
-                { label: "Process", href: "#process" },
-                { label: "Reviews", href: "#testimonials" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Contact", href: "#contact" },
+                { label: "About", href: "/#about" },
+                { label: "Projects", href: "/#projects" },
+                { label: "Process", href: "/#process" },
+                { label: "Reviews", href: "/#testimonials" },
+                { label: "FAQ", href: "/#faq" },
+                { label: "Contact", href: "/#contact" },
               ].map((l) => (
                 <li key={l.href}>
                   <a href={l.href} className="text-sm text-concrete/65 hover:text-concrete">

@@ -3,18 +3,19 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Menu, X } from "lucide-react";
 import Container from "../../components/ui/Container";
 import Button from "../../components/ui/Button";
 import { siteConfig } from "../../lib/site-config";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#process", label: "Process" },
-  { href: "#about", label: "About" },
-  { href: "#testimonials", label: "Reviews" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#services", label: "Services" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#process", label: "Process" },
+  { href: "/#about", label: "About" },
+  { href: "/#testimonials", label: "Reviews" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Nav() {
@@ -37,17 +38,17 @@ export default function Nav() {
       }`}
     >
       <Container className="flex h-18 items-center justify-between py-4">
-        <a href="#top" className="flex items-center gap-2.5">
+        <Link href="/#top" className="flex items-center gap-2.5">
           <span className="relative h-16 w-48 shrink-0">
-            <Image 
-              src="/logo/logo-full-light.png" 
-              alt="logo" 
+            <Image
+              src="/logo/logo-full-light.png"
+              alt="logo"
               width={224}
-              height={74} 
+              height={74}
               className="object-contain " priority />
           </span>
-          
-        </a>
+
+        </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
@@ -69,7 +70,7 @@ export default function Nav() {
             <Phone className="h-3.5 w-3.5 text-oxblood-light" />
             {siteConfig.phone}
           </a>
-          <Button href="#contact" className="!py-3 !px-5 !text-xs">
+          <Button href="/#contact" className="!py-3 !px-5 !text-xs">
             Free Estimate
           </Button>
         </div>
