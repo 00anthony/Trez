@@ -45,4 +45,10 @@ export const siteConfig = {
     lng: -97.7431,
     coordLabel: "30.2672° N, 97.7431° W — CENTRAL TEXAS",
   },
+  features: {
+    // Audience-specific routes/copy (e.g. /residential, /commercial) are built
+    // into the framework but stay off for Trez — see lib/audience.ts.
+    audienceRoutes: false,
+    serviceAreaPages: true,
+  },
 } as const;
