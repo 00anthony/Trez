@@ -42,6 +42,19 @@ export async function POST(req: NextRequest) {
   const service = String(formData.get("service") || "").trim();
   const message = String(formData.get("message") || "").trim();
 
+  // Optional context — present when the form is embedded on a service or
+  // service-area page. Absent entirely on the homepage form.
+  const sourcePage = String(formData.get("sourcePage") || "").trim();
+  const location = String(formData.get("location") || "").trim();
+  const sourcePageLabels: Record<string, string> = {
+    service: "Service Page",
+    "service-area": "Service Area Page",
+    "audience-service": "Audience Service Page",
+  };
+  const source = sourcePage
+    ? [sourcePageLabels[sourcePage] ?? sourcePage, location].filter(Boolean).join(" — ")
+    : undefined;
+
   if (!name || !phone || !email || !service) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
@@ -68,7 +81,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const lead = { name, phone, email, service, message, photoCount: photoEntries.length };
+  const lead = { name, phone, email, service, message, photoCount: photoEntries.length, source };
 
   // ---- Build email attachments ---------------------------------------
   const attachments = await Promise.all(

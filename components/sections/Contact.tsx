@@ -6,12 +6,18 @@ import Reveal from "../../components/ui/Reveal";
 import SectionNumber from "../../components/ui/SectionNumber";
 import SectionBackdrop from "../../components/ui/SectionBackdrop";
 import ServiceAreaMap from "../../components/ui/ServiceAreaMap";
-import ContactForm from "./ContactForm";
+import ContactForm, { ContactFormContext } from "./ContactForm";
 import { siteConfig } from "../../lib/site-config";
 import { InsuranceLogo } from "../ui/InsuranceLogo";
 import { GoogleIcon } from "../ui/GoogleIcon";
 
-export default function Contact() {
+export default function Contact({
+  defaultService,
+  context,
+}: {
+  defaultService?: string;
+  context?: ContactFormContext;
+} = {}) {
   type HeroStat = {
       icon?: ReactNode;
       value: string;
@@ -111,7 +117,7 @@ export default function Contact() {
 
           {/* Form */}
           <Reveal delay={0.12} className="lg:col-span-5">
-            <ContactForm />
+            <ContactForm defaultService={defaultService} context={context} />
 
             {/* Mobile only: */}
             {/* Floating glass stat cards */}

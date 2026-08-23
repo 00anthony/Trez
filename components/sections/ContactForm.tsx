@@ -3,17 +3,7 @@
 import { useRef, useState, FormEvent } from "react";
 import { UploadCloud, X, ImageIcon, CheckCircle2 } from "lucide-react";
 import Button from "../../components/ui/Button";
-
-const services = [
-  "Driveway",
-  "Patio",
-  "Foundation",
-  "Slab",
-  "Concrete Repair",
-  "Residential Build",
-  "Commercial Project",
-  "Not Sure Yet",
-];
+import { services } from "../../lib/data";
 
 const MAX_PHOTOS = 2;
 const MAX_SIZE_MB = 5;
@@ -21,8 +11,24 @@ const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function ContactForm() {
+export type ContactFormContext = {
+  sourcePage: "service" | "service-area" | "audience-service";
+  service?: string;
+  location?: string;
+};
+
+export default function ContactForm({
+  defaultService,
+  context,
+}: {
+  /** Service slug to preselect in the dropdown, e.g. from a service page. */
+  defaultService?: string;
+  context?: ContactFormContext;
+}) {
   const [status, setStatus] = useState<Status>("idle");
+  const defaultServiceName = defaultService
+    ? services.find((s) => s.slug === defaultService)?.name
+    : undefined;
   const [photos, setPhotos] = useState<File[]>([]);
   const [photoError, setPhotoError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -113,14 +119,16 @@ export default function ContactForm() {
           <select
             name="service"
             required
+            defaultValue={defaultServiceName ?? ""}
             className="w-full border border-charcoal-2 bg-ink px-4 py-3 text-sm text-concrete focus:border-oxblood-light"
           >
             <option value="">Select a service</option>
             {services.map((s) => (
-              <option key={s} value={s}>
-                {s}
+              <option key={s.slug} value={s.name}>
+                {s.name}
               </option>
             ))}
+            <option value="Not Sure Yet">Not Sure Yet</option>
           </select>
         </div>
         <div className="sm:col-span-2">
@@ -207,6 +215,9 @@ export default function ContactForm() {
           )}
         </div>
       </div>
+
+      {context?.sourcePage && <input type="hidden" name="sourcePage" value={context.sourcePage} />}
+      {context?.location && <input type="hidden" name="location" value={context.location} />}
 
       <Button
         type="submit"

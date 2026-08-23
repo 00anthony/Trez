@@ -24,6 +24,8 @@ export type LeadRow = {
   service: string;
   message: string;
   photoCount: number;
+  /** Appended as an extra trailing column — existing sheet layouts are unaffected. */
+  source?: string;
 };
 
 function getSheetsClient() {
@@ -70,6 +72,7 @@ export async function appendLeadToSheet(lead: LeadRow): Promise<void> {
           lead.service,
           lead.message,
           lead.photoCount,
+          lead.source ?? "",
         ],
       ],
     },

@@ -7,6 +7,8 @@ export type LeadDetails = {
   service: string;
   message: string;
   photoCount: number;
+  /** Where the form was submitted from, e.g. "Service Page — Concrete Driveways". Internal-use only. */
+  source?: string;
 };
 
 /** Email sent to the business (the client) with the full lead details. */
@@ -26,6 +28,7 @@ export function clientNotificationEmail(lead: LeadDetails) {
           ${row("Service Needed", lead.service)}
           ${row("Project Details", lead.message || "—")}
           ${row("Photos Attached", String(lead.photoCount))}
+          ${lead.source ? row("Submitted From", lead.source) : ""}
         </tbody>
       </table>
 
@@ -44,6 +47,7 @@ export function clientNotificationEmail(lead: LeadDetails) {
     `Service Needed: ${lead.service}`,
     `Project Details: ${lead.message || "—"}`,
     `Photos Attached: ${lead.photoCount}`,
+    ...(lead.source ? [`Submitted From: ${lead.source}`] : []),
   ].join("\n");
 
   return { subject, html, text };
