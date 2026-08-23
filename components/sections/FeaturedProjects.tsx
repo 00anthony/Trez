@@ -1,14 +1,13 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Calendar, Ruler, Star } from "lucide-react";
 import clsx from "clsx";
 import Container from "../../components/ui/Container";
 import Eyebrow from "../../components/ui/Eyebrow";
 import GradeLine from "../../components/ui/GradeLine";
 import Reveal from "../../components/ui/Reveal";
 import Button from "../../components/ui/Button";
-import BeforeAfterSlider from "../../components/ui/BeforeAfterSlider";
+import ProjectCard from "../../components/ui/ProjectCard";
 import SectionNumber from "../../components/ui/SectionNumber";
 import SectionBackdrop from "../../components/ui/SectionBackdrop";
 import { projects } from "../../lib/data";
@@ -16,6 +15,7 @@ import { useProjectsFilter, FilterValue } from "../../lib/projects-filter-contex
 
 const filters: FilterValue[] = [
   "All",
+  "Featured",
   "Driveways",
   "Patios",
   "Commercial",
@@ -26,9 +26,14 @@ const filters: FilterValue[] = [
 
 const VISIBLE_COUNT = 4;
 
-/** All projects if "All" is active, otherwise the first N in category order — never paginated. */
+/** All projects if "All" is active, otherwise the first N in category/featured order — never paginated. */
 function pickVisible(active: FilterValue) {
-  const pool = active === "All" ? projects : projects.filter((p) => p.category === active);
+  const pool =
+    active === "All"
+      ? projects
+      : active === "Featured"
+        ? projects.filter((p) => p.featured)
+        : projects.filter((p) => p.category === active);
   return pool.slice(0, VISIBLE_COUNT);
 }
 
@@ -89,71 +94,7 @@ export default function FeaturedProjects() {
                 transition={{ duration: 0.4, delay: (i % 2) * 0.06 }}
                 className="group border border-charcoal-2 bg-charcoal/40"
               >
-                <BeforeAfterSlider
-                  beforeLabel={project.beforeLabel}
-                  afterLabel={project.afterLabel}
-                  beforeSrc={project.beforeSrc}
-                  afterSrc={project.afterSrc}
-                  seed={i}
-                />
-
-                <div className="p-6 md:p-7">
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11px] tracking-[0.08em] text-steel uppercase">
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="h-3 w-3" /> {project.location}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="h-3 w-3" /> {project.completed}
-                    </span>
-                    {project.sqft && (
-                      <span className="flex items-center gap-1.5">
-                        <Ruler className="h-3 w-3" /> {project.sqft}
-                      </span>
-                    )}
-                  </div>
-
-                  <h3 className="mt-3 font-display text-2xl font-semibold uppercase tracking-tight text-concrete">
-                    {project.title}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium text-oxblood-light">
-                    {project.service} · {project.timeline}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-concrete/65">
-                    {project.description}
-                  </p>
-
-                  {project.review && (
-                    <div className="mt-5 border-l-2 border-oxblood pl-4">
-                      <a
-                        href="/#testimonials"
-                      >
-                        <div className="mb-1 flex gap-0.5">
-                          <GoogleIcon className="mr-2 h-3 w-3 shrink-0 opacity-70" />
-                          {Array.from({ length: 5 }).map((_, s) => (
-                            <Star key={s} className=" h-3 w-3 fill-[#fbbc04] text-[#fbbc04]" />
-                          ))}
-                        </div>
-                        <p className="text-sm italic text-concrete/75">
-                          &ldquo;{project.review.quote}&rdquo;
-                        </p>
-                        <p className="mt-1 font-mono text-[11px] tracking-[0.1em] text-steel uppercase">
-                          — {project.review.author}
-                        </p>
-                      </a>
-                    </div>
-                  )}
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="border border-charcoal-2 px-2.5 py-1 font-mono text-[10px] tracking-[0.08em] text-concrete/55 uppercase"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <ProjectCard project={project} seed={i} />
               </motion.article>
             ))}
           </AnimatePresence>
@@ -183,28 +124,5 @@ export default function FeaturedProjects() {
         <GradeLine className="mt-24" />
       </Container>
     </section>
-  );
-}
-
-function GoogleIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden>
-      <path
-        fill="#4285F4"
-        d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.47a5.54 5.54 0 0 1-2.4 3.63v3h3.87c2.27-2.09 3.58-5.17 3.58-8.82Z"
-      />
-      <path
-        fill="#34A853"
-        d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.87-3c-1.08.72-2.46 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.27v3.11A11.998 11.998 0 0 0 12 24Z"
-      />
-      <path
-        fill="#FBBC05"
-        d="M5.27 14.28A7.2 7.2 0 0 1 4.89 12c0-.79.14-1.56.38-2.28V6.61H1.27A11.998 11.998 0 0 0 0 12c0 1.94.46 3.77 1.27 5.39l4-3.11Z"
-      />
-      <path
-        fill="#EA4335"
-        d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.69 1.27 6.61l4 3.11C6.22 6.86 8.87 4.75 12 4.75Z"
-      />
-    </svg>
   );
 }

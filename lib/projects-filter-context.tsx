@@ -3,7 +3,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import type { ProjectCategory } from "../lib/data";
 
-export type FilterValue = "All" | ProjectCategory;
+export type FilterValue = "All" | "Featured" | ProjectCategory;
 
 type FilterContextType = {
   activeFilter: FilterValue;
