@@ -4,6 +4,7 @@ import { useRef, useState, FormEvent } from "react";
 import { UploadCloud, X, ImageIcon, CheckCircle2 } from "lucide-react";
 import Button from "../../components/ui/Button";
 import { services } from "../../lib/data";
+import { getServiceContent } from "../../lib/audience";
 
 const MAX_PHOTOS = 2;
 const MAX_SIZE_MB = 5;
@@ -12,7 +13,7 @@ const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
 type Status = "idle" | "submitting" | "success" | "error";
 
 export type ContactFormContext = {
-  sourcePage: "service" | "service-area" | "audience-service";
+  sourcePage: "service" | "service-area" | "audience-service" | "project";
   service?: string;
   location?: string;
 };
@@ -26,9 +27,8 @@ export default function ContactForm({
   context?: ContactFormContext;
 }) {
   const [status, setStatus] = useState<Status>("idle");
-  const defaultServiceName = defaultService
-    ? services.find((s) => s.slug === defaultService)?.name
-    : undefined;
+  const defaultServiceMatch = defaultService ? services.find((s) => s.slug === defaultService) : undefined;
+  const defaultServiceName = defaultServiceMatch ? getServiceContent(defaultServiceMatch).name : undefined;
   const [photos, setPhotos] = useState<File[]>([]);
   const [photoError, setPhotoError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -123,11 +123,14 @@ export default function ContactForm({
             className="w-full border border-charcoal-2 bg-ink px-4 py-3 text-sm text-concrete focus:border-oxblood-light"
           >
             <option value="">Select a service</option>
-            {services.map((s) => (
-              <option key={s.slug} value={s.name}>
-                {s.name}
-              </option>
-            ))}
+            {services.map((s) => {
+              const name = getServiceContent(s).name;
+              return (
+                <option key={s.slug} value={name}>
+                  {name}
+                </option>
+              );
+            })}
             <option value="Not Sure Yet">Not Sure Yet</option>
           </select>
         </div>
