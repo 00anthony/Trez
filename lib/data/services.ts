@@ -111,6 +111,7 @@ export const services: Service[] = [
   {
     slug: "slabs",
     audiences: ["residential", "commercial"],
+    featured: true,
     content: {
       default: {
         name: "Slabs",
@@ -141,7 +142,7 @@ export const services: Service[] = [
   {
     slug: "concrete-repair",
     audiences: ["residential", "commercial"],
-    featured: true,
+    featured: false,
     content: {
       default: {
         name: "Concrete Repair",
@@ -198,8 +199,71 @@ export const services: Service[] = [
     },
   },
   {
+    slug: "drywall",
+    audiences: ["residential", "commercial"],
+    featured: true,
+    content: {
+      default: {
+        name: "Drywall Installation & Repair",
+        short: "Hang, finish, and repair drywall for additions, remodels, and build-outs.",
+        description:
+          "Full drywall service from framing to final finish — hanging, taping, texturing, and repair work integrated with our construction and remodeling projects.",
+        bullets: ["Hang, tape, float & texture", "Patch & repair for existing walls", "Level 4/5 finish available"],
+        image: "/services/light-commercial.avif",
+      },
+      residential: {
+        name: "Residential Drywall",
+        short: "Hang, finish, and repair drywall for additions, remodels, and repairs.",
+        description:
+          "Drywall installation and repair for home additions, remodels, and everyday wall damage — hung and finished to match existing texture.",
+        bullets: ["Hang, tape, float & texture", "Patch & repair for existing walls", "Texture matching for seamless repairs"],
+        image: "/services/light-commercial.avif",
+      },
+      commercial: {
+        name: "Commercial Drywall & Tenant Finish-Out",
+        short: "Drywall installation for tenant finish-out and commercial build-outs.",
+        description:
+          "Drywall hanging and finishing for tenant build-outs and commercial remodels, scheduled to keep your project on the general contractor's timeline.",
+        bullets: ["Tenant finish-out scheduling", "Fire-rated & sound-rated assemblies", "Level 4/5 finish available"],
+        image: "/services/light-commercial.avif",
+      },
+    },
+  },
+  {
+    slug: "interior-flooring",
+    audiences: ["residential", "commercial"],
+    featured: true,
+    content: {
+      default: {
+        name: "Interior Flooring",
+        short: "Tile, vinyl, and wood flooring installed as part of your build or remodel.",
+        description:
+          "Interior flooring installation — tile, luxury vinyl, and wood — coordinated with our construction and remodeling projects from subfloor to finish.",
+        bullets: ["Tile, vinyl & wood installation", "Subfloor prep & leveling", "Coordinated with remodel timelines"],
+        image: "/services/light-commercial.avif",
+      },
+      residential: {
+        name: "Residential Flooring",
+        short: "Tile, vinyl, and wood flooring for home remodels and additions.",
+        description:
+          "Flooring installation for home remodels and additions — tile, luxury vinyl plank, and wood, matched to the rest of your build.",
+        bullets: ["Tile, vinyl & wood installation", "Subfloor prep & leveling", "Matched to existing home finishes"],
+        image: "/services/light-commercial.avif",
+      },
+      commercial: {
+        name: "Commercial Flooring",
+        short: "Durable tile and vinyl flooring for tenant finish-out and commercial spaces.",
+        description:
+          "Commercial-grade tile and vinyl flooring installation for tenant finish-out and retail build-outs, installed on schedule with the rest of the build.",
+        bullets: ["Commercial-grade tile & vinyl", "Subfloor prep & leveling", "Scheduled around tenant finish-out"],
+        image: "/services/light-commercial.avif",
+      },
+    },
+  },
+  {
     slug: "custom-project",
     audiences: ["residential", "commercial"],
+    featured: false,
     content: {
       default: {
         name: "Custom Project",
@@ -227,4 +291,5 @@ export const services: Service[] = [
       },
     },
   },
+
 ];

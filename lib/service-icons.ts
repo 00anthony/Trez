@@ -1,5 +1,17 @@
 import type { ComponentType } from "react";
-import { Car, Trees, Milestone, Building2, Square, Hammer, Home, Building, ClipboardList } from "lucide-react";
+import {
+  Car,
+  Trees,
+  Milestone,
+  Building2,
+  Square,
+  Hammer,
+  Home,
+  Building,
+  ClipboardList,
+  PaintRoller,
+  LayoutGrid,
+} from "lucide-react";
 
 export const serviceIcons: Record<string, ComponentType<{ className?: string; strokeWidth?: number }>> = {
   driveways: Car,
@@ -11,4 +23,6 @@ export const serviceIcons: Record<string, ComponentType<{ className?: string; st
   "residential-construction": Home,
   "commercial-construction": Building,
   "custom-project": ClipboardList,
+  drywall: PaintRoller,
+  "interior-flooring": LayoutGrid,
 };
