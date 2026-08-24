@@ -209,3 +209,27 @@ export function getProjectsByService(serviceSlug: string): Project[] {
 export function getProjectsByServiceArea(serviceAreaSlug: string): Project[] {
   return projects.filter((p) => p.serviceAreaSlug === serviceAreaSlug);
 }
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
+}
+
+/** Other projects sharing this project's service, then its area, up to `limit` — no duplicates, excludes itself. */
+export function getRelatedProjects(project: Project, limit = 3): Project[] {
+  const related: Project[] = [];
+  const seen = new Set([project.slug]);
+
+  const addAll = (candidates: Project[]) => {
+    for (const p of candidates) {
+      if (related.length >= limit) break;
+      if (seen.has(p.slug)) continue;
+      seen.add(p.slug);
+      related.push(p);
+    }
+  };
+
+  if (project.serviceSlug) addAll(getProjectsByService(project.serviceSlug));
+  if (related.length < limit && project.serviceAreaSlug) addAll(getProjectsByServiceArea(project.serviceAreaSlug));
+
+  return related;
+}

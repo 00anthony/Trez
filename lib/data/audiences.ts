@@ -1,17 +1,16 @@
 import type { Audience } from "../types";
 
 /**
- * Audience-specific copy and routing is a framework capability, not a Trez
- * requirement — it stays fully disabled via siteConfig.features.audienceRoutes
- * (see app/[audience]/**). A future client can enable it by flipping that
- * flag and setting `enabled: true` on the audiences it wants live, without
- * touching the service-page architecture.
+ * Audience-specific copy and routing is a framework capability — enabled here
+ * for Trez via siteConfig.features.audienceRoutes + `enabled: true` below. A
+ * future client can disable it the same way without touching the service-page
+ * architecture (see app/[audience]/**).
  */
 export const audiences: Audience[] = [
   {
     slug: "residential",
     name: "Residential",
-    enabled: false,
+    enabled: true,
     copy: {
       heroHeadline: "Concrete Built for Your Home",
       heroDescription:
@@ -21,7 +20,7 @@ export const audiences: Audience[] = [
   {
     slug: "commercial",
     name: "Commercial",
-    enabled: false,
+    enabled: true,
     copy: {
       heroHeadline: "Commercial Concrete & Light Construction",
       heroDescription:

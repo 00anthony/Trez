@@ -46,9 +46,13 @@ export const siteConfig = {
     coordLabel: "30.2672° N, 97.7431° W — CENTRAL TEXAS",
   },
   features: {
-    // Audience-specific routes/copy (e.g. /residential, /commercial) are built
-    // into the framework but stay off for Trez — see lib/audience.ts.
-    audienceRoutes: false,
+    // Audience-specific routes/copy (e.g. /residential, /commercial) — see lib/audience.ts.
+    audienceRoutes: true,
     serviceAreaPages: true,
+    // Combined /service-areas/[slug]/[service] pages — only generates a page where
+    // ServiceArea.relatedServices actually includes that service, so it never produces
+    // thin, city-name-swapped pages. Off until there's enough real per-location project
+    // content to back more combinations.
+    locationServicePages: false,
   },
 } as const;
