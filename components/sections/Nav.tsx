@@ -8,14 +8,16 @@ import { Phone, Menu, X } from "lucide-react";
 import Container from "../../components/ui/Container";
 import Button from "../../components/ui/Button";
 import { siteConfig } from "../../lib/site-config";
+import { media } from "../../lib/media";
 
 const links = [
-  { href: "/#services", label: "Services" },
-  { href: "/#projects", label: "Projects" },
+  { href: "/services", label: "Services" },
+  { href: "/projects", label: "Projects" },
   { href: "/#process", label: "Process" },
-  { href: "/#about", label: "About" },
-  { href: "/#testimonials", label: "Reviews" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/about", label: "About" },
+  { href: "/residential", label: "Residential" },
+  { href: "/commercial", label: "Commercial" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -41,7 +43,7 @@ export default function Nav() {
         <Link href="/#top" className="flex items-center gap-2.5">
           <span className="relative h-16 w-48 shrink-0">
             <Image
-              src="/logo/logo-full-light.png"
+              src={media.logo.full}
               alt="logo"
               width={224}
               height={74}
@@ -52,13 +54,13 @@ export default function Nav() {
 
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className="font-mono text-[12px] tracking-[0.14em] uppercase text-concrete/65 transition-colors hover:text-concrete"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -70,7 +72,7 @@ export default function Nav() {
             <Phone className="h-3.5 w-3.5 text-oxblood-light" />
             {siteConfig.phone}
           </a>
-          <Button href="/#contact" className="!py-3 !px-5 !text-xs">
+          <Button href="/contact" className="!py-3 !px-5 !text-xs">
             Free Estimate
           </Button>
         </div>
@@ -96,14 +98,14 @@ export default function Nav() {
           >
             <Container className="flex flex-col gap-1 py-5">
               {links.map((l) => (
-                <a
+                <Link
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
                   className="py-3 font-mono text-sm tracking-[0.1em] uppercase text-concrete/80"
                 >
                   {l.label}
-                </a>
+                </Link>
               ))}
               <a
                 href={siteConfig.phoneHref}

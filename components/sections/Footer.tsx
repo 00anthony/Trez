@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../../components/ui/Container";
 import { siteConfig } from "../../lib/site-config";
-import { services } from "../../lib/data";
+import { media } from "../../lib/media";
+import { services, serviceAreas } from "../../lib/data";
+import { getServiceContent } from "../../lib/audience";
 
 const year = new Date().getFullYear();
 
@@ -10,12 +12,12 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-charcoal-2 bg-charcoal pt-20 pb-28 md:pb-16">
       <Container>
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/#top" className="flex items-left">
               <span className="relative h-22 w-64 shrink-0 object-left">
                 <Image
-                  src="/logo/logo-full-light.png"
+                  src={media.logo.full}
                   alt="logo"
                   width={248}
                   height={96}
@@ -63,7 +65,7 @@ export default function Footer() {
               {services.slice(0, 6).map((s) => (
                 <li key={s.slug}>
                   <Link href={`/services/${s.slug}`} className="text-sm text-concrete/65 hover:text-concrete">
-                    {s.name}
+                    {getServiceContent(s).name}
                   </Link>
                 </li>
               ))}
@@ -72,16 +74,43 @@ export default function Footer() {
 
           <div>
             <h4 className="font-mono text-[11px] tracking-[0.14em] text-steel uppercase">
+              Service Areas
+            </h4>
+            <ul className="mt-5 space-y-2.5">
+              {serviceAreas.map((area) => (
+                <li key={area.slug}>
+                  <Link href={`/service-areas/${area.slug}`} className="text-sm text-concrete/65 hover:text-concrete">
+                    {area.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/service-areas" className="text-sm text-concrete/65 hover:text-concrete">
+                  All Service Areas
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-mono text-[11px] tracking-[0.14em] text-steel uppercase">
               Company
             </h4>
             <ul className="mt-5 space-y-2.5">
+              <li>
+                <Link href="/about" className="text-sm text-concrete/65 hover:text-concrete">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className="text-sm text-concrete/65 hover:text-concrete">
+                  Projects
+                </Link>
+              </li>
               {[
-                { label: "About", href: "/#about" },
-                { label: "Projects", href: "/#projects" },
                 { label: "Process", href: "/#process" },
                 { label: "Reviews", href: "/#testimonials" },
                 { label: "FAQ", href: "/#faq" },
-                { label: "Contact", href: "/#contact" },
               ].map((l) => (
                 <li key={l.href}>
                   <a href={l.href} className="text-sm text-concrete/65 hover:text-concrete">
@@ -89,6 +118,11 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link href="/contact" className="text-sm text-concrete/65 hover:text-concrete">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
