@@ -9,6 +9,7 @@ import Reveal from "../../components/ui/Reveal";
 import SectionNumber from "../../components/ui/SectionNumber";
 import SectionBackdrop from "../../components/ui/SectionBackdrop";
 import { siteConfig } from "../../lib/site-config";
+import { media } from "../../lib/media";
 import { InsuranceLogo } from "../ui/InsuranceLogo";
 import { GoogleIcon } from "../ui/GoogleIcon";
 import Image from "next/image";
@@ -64,9 +65,9 @@ export default function About() {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               className="relative mt-10 aspect-[4/5] w-full max-w-sm overflow-hidden border border-charcoal-2"
             >
-              <Image 
-                src="/about/about-poster.png" 
-                alt="poster" 
+              <Image
+                src={media.about.poster}
+                alt="poster"
                 fill
                 sizes="" 
                 className="object-contain"

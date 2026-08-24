@@ -6,6 +6,7 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Eyebrow from "../ui/Eyebrow";
 import { siteConfig } from "../../lib/site-config";
+import { media } from "../../lib/media";
 import { GoogleIcon } from "../ui/GoogleIcon";
 import { InsuranceLogo } from "../ui/InsuranceLogo";
 
@@ -46,7 +47,7 @@ export default function Hero() {
           
           poster=""
         >
-          <source src="/video/hero-loop-720p.mp4" type="video/mp4" />
+          <source src={media.hero.default} type="video/mp4" />
         </video>
         
       </div>
