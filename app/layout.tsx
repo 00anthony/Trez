@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "../lib/site-config";
+import { media } from "../lib/media";
 import StickyMobileCTA from "../components/ui/StickyMobileCTA";
 import AppShell from "../components/AppShell";
 
@@ -41,14 +42,14 @@ export const metadata: Metadata = {
     description:
       "Premium concrete and general contracting for Greater Central Texas. Driveways, patios, foundations, slabs & repair. Insured and free estimates.",
     siteName: siteConfig.name,
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: siteConfig.name }],
+    images: [{ url: media.og.image, width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | Concrete Contractor in Central Texas`,
     description:
       "Premium concrete and general contracting for Greater Central Texas. Insured and free estimatess.",
-    images: ["/og-image.png"],
+    images: [media.og.image],
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteConfig.url },
