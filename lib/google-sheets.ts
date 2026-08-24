@@ -59,13 +59,18 @@ export async function appendLeadToSheet(lead: LeadRow): Promise<void> {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: sheetId,
-    range: `${tabName}!B2`,
+    // Bounding both the start AND end column (B:I) is required here — a
+    // single-cell range like "B2" doesn't tell the API which columns the
+    // table occupies, so it falls back to scanning the whole sheet and
+    // anchors the table to column A (which already has data from the
+    // status dropdown), appending new rows there instead of at B2.
+    range: `${tabName}!B2:I`,
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {
       values: [
         [
-          lead.timestamp,
+          formatTimestamp(lead.timestamp),
           lead.name,
           lead.phone,
           lead.email,
@@ -77,4 +82,26 @@ export async function appendLeadToSheet(lead: LeadRow): Promise<void> {
       ],
     },
   });
+}
+
+const SHEET_TIMEZONE = "America/Chicago";
+
+const timestampFormatter = new Intl.DateTimeFormat("en-US", {
+  timeZone: SHEET_TIMEZONE,
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "2-digit",
+  timeZoneName: "short",
+});
+
+/** Converts an ISO timestamp (e.g. "2026-08-24T01:19:56.295Z") into a
+ *  readable, business-timezone string (e.g. "Aug 23, 2026, 8:19 PM CDT"). */
+function formatTimestamp(isoTimestamp: string): string {
+  const date = new Date(isoTimestamp);
+  if (Number.isNaN(date.getTime())) {
+    return isoTimestamp;
+  }
+  return timestampFormatter.format(date);
 }
