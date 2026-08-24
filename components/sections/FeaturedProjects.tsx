@@ -108,16 +108,16 @@ export default function FeaturedProjects() {
           )}
         </div>
 
-        {/* Custom project CTA */}
+        {/* Full portfolio CTA */}
         <Reveal delay={0.1} className="mt-20 flex flex-col items-center border border-charcoal-2 bg-charcoal/40 px-8 py-14 text-center md:py-16">
           <p className="font-mono text-[11px] tracking-[0.2em] text-steel uppercase">
             Don&rsquo;t See Your Project?
           </p>
           <h3 className="mt-4 max-w-xl font-display text-3xl font-bold uppercase tracking-tight text-concrete sm:text-4xl">
-            We build custom concrete solutions
+            Browse the full portfolio
           </h3>
-          <Button href="#contact" variant="primary" className="mt-8">
-            Request a Free Estimate
+          <Button href="/projects" variant="primary" className="mt-8">
+            View All Projects
           </Button>
         </Reveal>
 

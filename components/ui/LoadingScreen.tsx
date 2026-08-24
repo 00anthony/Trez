@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { media } from "../../lib/media";
 
 /**
  * Loading screen — assembles the Trez logo from three pieces:
@@ -74,12 +75,13 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
             className="relative h-14 w-14 sm:h-20 sm:w-20"
           >
             <Image
-              src="/logo/logo-icon-light.png"
+              src={media.logo.icon}
               alt=""
               fill
               sizes="(min-width: 768px) 80px, 56px"
               className="object-contain"
               priority
+              fetchPriority="high"
             />
           </motion.div>
 
@@ -93,12 +95,13 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
               className="relative h-9 w-[150px] sm:h-12 sm:w-[210px] -mb-1"
             >
               <Image
-                src="/logo/logo-wordmark-header-light.png"
+                src={media.logo.wordmarkHeader}
                 alt="Trez"
                 fill
                 sizes="(min-width: 768px) 210px, 150px"
                 className="object-contain object-left"
                 priority
+                fetchPriority="high"
               />
             </motion.div>
 
@@ -109,12 +112,13 @@ export default function LoadingScreen({ onDone }: { onDone: () => void }) {
               className="relative mt-1.5 h-3.5 w-[150px] sm:h-5 sm:w-[210px]"
             >
               <Image
-                src="/logo/logo-wordmark-subtext-light.png"
+                src={media.logo.wordmarkSubtext}
                 alt="Construction Group"
                 fill
                 sizes="(min-width: 768px) 210px, 150px"
                 className="object-contain object-left"
                 priority
+                fetchPriority="high"
               />
             </motion.div>
           </div>
