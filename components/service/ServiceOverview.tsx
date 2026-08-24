@@ -5,9 +5,9 @@ import Reveal from "../ui/Reveal";
 import GradeLine from "../ui/GradeLine";
 import SectionBackdrop from "../ui/SectionBackdrop";
 import { siteConfig } from "../../lib/site-config";
-import type { Service } from "../../lib/types";
+import type { ServiceContent } from "../../lib/types";
 
-export default function ServiceOverview({ service }: { service: Service }) {
+export default function ServiceOverview({ content }: { content: ServiceContent }) {
   return (
     <section className="relative overflow-hidden bg-ink py-20 md:py-28">
       <SectionBackdrop glow={false} />
@@ -21,7 +21,7 @@ export default function ServiceOverview({ service }: { service: Service }) {
                 Engineered for {siteConfig.serviceArea}
               </h2>
               <p className="mt-5 max-w-xl leading-relaxed text-concrete/70">
-                {service.longDescription ?? service.description}
+                {content.longDescription ?? content.description}
               </p>
             </Reveal>
 
@@ -46,7 +46,7 @@ export default function ServiceOverview({ service }: { service: Service }) {
                 Key Benefits
               </div>
               <ul className="mt-4 space-y-3.5">
-                {service.bullets.map((bullet) => (
+                {content.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-3">
                     <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-oxblood-light" strokeWidth={2.5} />
                     <span className="text-sm leading-relaxed text-concrete/80">{bullet}</span>

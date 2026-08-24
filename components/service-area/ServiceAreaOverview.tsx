@@ -5,6 +5,7 @@ import Eyebrow from "../ui/Eyebrow";
 import Reveal from "../ui/Reveal";
 import GradeLine from "../ui/GradeLine";
 import SectionBackdrop from "../ui/SectionBackdrop";
+import { getServiceContent } from "../../lib/audience";
 import type { Service, ServiceArea } from "../../lib/types";
 
 export default function ServiceAreaOverview({
@@ -59,7 +60,7 @@ export default function ServiceAreaOverview({
                         href={`/services/${service.slug}`}
                         className="flex items-center justify-between border-b border-charcoal-2 py-2.5 text-sm text-concrete/80 transition-colors hover:text-concrete"
                       >
-                        {service.name}
+                        {getServiceContent(service).name}
                       </Link>
                     </li>
                   ))}
