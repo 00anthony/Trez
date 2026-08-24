@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/#top" className="flex items-left">
-              <span className="relative h-22 w-64 shrink-0 object-left">
+              <span className="relative h-22 w-64 shrink-0 object-left -ml-6">
                 <Image
                   src={media.logo.full}
                   alt="logo"
