@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Calendar, Ruler, Star } from "lucide-react";
+import { MapPin, Calendar, Ruler, Star, ArrowUpRight } from "lucide-react";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { GoogleIcon } from "./GoogleIcon";
 import type { Project } from "../../lib/types";
@@ -31,7 +31,9 @@ export default function ProjectCard({ project, seed = 0 }: { project: Project; s
         </div>
 
         <h3 className="mt-3 font-display text-2xl font-semibold uppercase tracking-tight text-concrete">
-          {project.title}
+          <Link href={`/projects/${project.slug}`} className="hover:text-oxblood-light">
+            {project.title}
+          </Link>
         </h3>
         <p className="mt-1 text-sm font-medium text-oxblood-light">
           {project.service} · {project.timeline}
@@ -69,6 +71,14 @@ export default function ProjectCard({ project, seed = 0 }: { project: Project; s
             </span>
           ))}
         </div>
+
+        <Link
+          href={`/projects/${project.slug}`}
+          className="mt-5 inline-flex items-center gap-1.5 font-mono text-xs tracking-[0.14em] text-oxblood-light uppercase transition-colors hover:text-concrete"
+        >
+          View Full Project
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
     </>
   );

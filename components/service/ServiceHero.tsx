@@ -5,21 +5,23 @@ import Container from "../ui/Container";
 import Eyebrow from "../ui/Eyebrow";
 import Button from "../ui/Button";
 import Breadcrumbs from "../ui/Breadcrumbs";
-import type { Service } from "../../lib/types";
+import type { ServiceContent } from "../../lib/types";
 
 export default function ServiceHero({
-  service,
+  content,
   hasRelatedProjects,
+  breadcrumbs,
 }: {
-  service: Service;
+  content: ServiceContent;
   hasRelatedProjects: boolean;
+  breadcrumbs: { label: string; href?: string }[];
 }) {
   return (
     <section className="relative overflow-hidden bg-ink pt-36 pb-20 md:pb-28">
       <div className="absolute inset-0 -z-20">
-        {service.image && (
+        {content.image && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={service.image} alt="" className="h-full w-full object-cover opacity-40" />
+          <img src={content.image} alt="" className="h-full w-full object-cover opacity-40" />
         )}
       </div>
       <div className="absolute inset-0 -z-10 bg-linear-to-t from-ink via-ink/85 to-ink/40" />
@@ -39,22 +41,16 @@ export default function ServiceHero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Services", href: "/#services" },
-              { label: service.name },
-            ]}
-          />
+          <Breadcrumbs items={breadcrumbs} />
 
           <Eyebrow className="mt-7 mb-5">What We Build</Eyebrow>
 
           <h1 className="max-w-3xl font-display text-5xl font-extrabold uppercase tracking-tight text-concrete sm:text-6xl md:text-7xl">
-            {service.name}
+            {content.name}
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-concrete/75 md:text-lg">
-            {service.description}
+            {content.description}
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
