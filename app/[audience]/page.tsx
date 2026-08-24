@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Nav from "../../components/sections/Nav";
+import Services from "../../components/sections/Services";
 import Contact from "../../components/sections/Contact";
 import Footer from "../../components/sections/Footer";
 import AudienceHero from "../../components/audience/AudienceHero";
-import { audiences, services } from "../../lib/data";
+import { ProjectsFilterProvider } from "../../lib/projects-filter-context";
+import { audiences } from "../../lib/data";
+import { isServiceAudience } from "../../lib/audience";
 import { siteConfig } from "../../lib/site-config";
 
 type Params = { audience: string };
 
 // Only exact matches from generateStaticParams render — everything else 404s.
-// Combined with an empty array below while audienceRoutes is off, this keeps
-// the entire [audience] segment unreachable for Trez.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -41,13 +42,16 @@ export default async function AudiencePage({ params }: { params: Promise<Params>
 
   const { audience: slug } = await params;
   const audience = audiences.find((a) => a.slug === slug && a.enabled);
-  if (!audience) notFound();
+  if (!audience || !isServiceAudience(audience.slug)) notFound();
 
   return (
     <>
       <Nav />
       <main>
-        <AudienceHero audience={audience} services={services} />
+        <AudienceHero audience={audience} />
+        <ProjectsFilterProvider>
+          <Services lockedAudience={audience.slug} />
+        </ProjectsFilterProvider>
         <Contact />
       </main>
       <Footer />
