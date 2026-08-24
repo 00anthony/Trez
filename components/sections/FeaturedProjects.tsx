@@ -116,6 +116,10 @@ export default function FeaturedProjects() {
           <h3 className="mt-4 max-w-xl font-display text-3xl font-bold uppercase tracking-tight text-concrete sm:text-4xl">
             Browse the full portfolio
           </h3>
+          <p className="mt-4 max-w-md text-sm text-concrete/60">
+            Or fill out the quote form and we&rsquo;ll
+            review the scope.
+          </p>
           <Button href="/projects" variant="primary" className="mt-8">
             View All Projects
           </Button>

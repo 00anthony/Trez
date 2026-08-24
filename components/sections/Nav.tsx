@@ -13,7 +13,6 @@ import { media } from "../../lib/media";
 const links = [
   { href: "/services", label: "Services" },
   { href: "/projects", label: "Projects" },
-  { href: "/#process", label: "Process" },
   { href: "/about", label: "About" },
   { href: "/residential", label: "Residential" },
   { href: "/commercial", label: "Commercial" },
@@ -57,7 +56,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="font-mono text-[12px] tracking-[0.14em] uppercase text-concrete/65 transition-colors hover:text-concrete"
+              className="font-mono text-[12px] tracking-[0.14em] uppercase text-concrete/90 transition-colors hover:text-white"
             >
               {l.label}
             </Link>
