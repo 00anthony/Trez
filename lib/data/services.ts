@@ -209,7 +209,7 @@ export const services: Service[] = [
         description:
           "Full drywall service from framing to final finish — hanging, taping, texturing, and repair work integrated with our construction and remodeling projects.",
         bullets: ["Hang, tape, float & texture", "Patch & repair for existing walls", "Level 4/5 finish available"],
-        image: "/services/light-commercial.avif",
+        image: "/services/drywall-residential.jpg",
       },
       residential: {
         name: "Residential Drywall",
@@ -217,7 +217,7 @@ export const services: Service[] = [
         description:
           "Drywall installation and repair for home additions, remodels, and everyday wall damage — hung and finished to match existing texture.",
         bullets: ["Hang, tape, float & texture", "Patch & repair for existing walls", "Texture matching for seamless repairs"],
-        image: "/services/light-commercial.avif",
+        image: "/services/drywall-residential.jpg",
       },
       commercial: {
         name: "Commercial Drywall & Tenant Finish-Out",
@@ -225,7 +225,7 @@ export const services: Service[] = [
         description:
           "Drywall hanging and finishing for tenant build-outs and commercial remodels, scheduled to keep your project on the general contractor's timeline.",
         bullets: ["Tenant finish-out scheduling", "Fire-rated & sound-rated assemblies", "Level 4/5 finish available"],
-        image: "/services/light-commercial.avif",
+        image: "/services/drywall-commercial.webp",
       },
     },
   },
@@ -240,7 +240,7 @@ export const services: Service[] = [
         description:
           "Interior flooring installation — tile, luxury vinyl, and wood — coordinated with our construction and remodeling projects from subfloor to finish.",
         bullets: ["Tile, vinyl & wood installation", "Subfloor prep & leveling", "Coordinated with remodel timelines"],
-        image: "/services/light-commercial.avif",
+        image: "/services/flooring-residential.jpg",
       },
       residential: {
         name: "Residential Flooring",
@@ -248,7 +248,7 @@ export const services: Service[] = [
         description:
           "Flooring installation for home remodels and additions — tile, luxury vinyl plank, and wood, matched to the rest of your build.",
         bullets: ["Tile, vinyl & wood installation", "Subfloor prep & leveling", "Matched to existing home finishes"],
-        image: "/services/light-commercial.avif",
+        image: "/services/flooring-residential.jpg",
       },
       commercial: {
         name: "Commercial Flooring",
@@ -256,7 +256,7 @@ export const services: Service[] = [
         description:
           "Commercial-grade tile and vinyl flooring installation for tenant finish-out and retail build-outs, installed on schedule with the rest of the build.",
         bullets: ["Commercial-grade tile & vinyl", "Subfloor prep & leveling", "Scheduled around tenant finish-out"],
-        image: "/services/light-commercial.avif",
+        image: "/services/flooring-commercial.jpg",
       },
     },
   },
