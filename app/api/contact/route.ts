@@ -50,6 +50,7 @@ export async function POST(req: NextRequest) {
     service: "Service Page",
     "service-area": "Service Area Page",
     "audience-service": "Audience Service Page",
+    project: "Project Page",
   };
   const source = sourcePage
     ? [sourcePageLabels[sourcePage] ?? sourcePage, location].filter(Boolean).join(" — ")
