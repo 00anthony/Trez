@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Nav from "../../../../components/sections/Nav";
-import Contact from "../../../../components/sections/Contact";
-import Footer from "../../../../components/sections/Footer";
-import ServiceHero from "../../../../components/service/ServiceHero";
-import ServiceOverview from "../../../../components/service/ServiceOverview";
-import RelatedProjects from "../../../../components/service/RelatedProjects";
-import { audiences, services, getProjectsByService } from "../../../../lib/data";
-import { getServiceContent } from "../../../../lib/audience";
-import { siteConfig } from "../../../../lib/site-config";
-import { breadcrumbJsonLd, serviceJsonLd } from "../../../../lib/structured-data";
+import Nav from "../../../components/sections/Nav";
+import Contact from "../../../components/sections/Contact";
+import Footer from "../../../components/sections/Footer";
+import ServiceHero from "../../../components/service/ServiceHero";
+import ServiceOverview from "../../../components/service/ServiceOverview";
+import RelatedProjects from "../../../components/service/RelatedProjects";
+import { audiences, services, getProjectsByService } from "../../../lib/data";
+import { getServiceContent, isServiceAudience } from "../../../lib/audience";
+import { siteConfig } from "../../../lib/site-config";
+import { breadcrumbJsonLd, serviceJsonLd } from "../../../lib/structured-data";
 
 type Params = { audience: string; slug: string };
 
@@ -19,8 +19,12 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   if (!siteConfig.features.audienceRoutes) return [];
   return audiences
-    .filter((a) => a.enabled)
-    .flatMap((audience) => services.map((service) => ({ audience: audience.slug, slug: service.slug })));
+    .filter((a) => a.enabled && isServiceAudience(a.slug))
+    .flatMap((audience) =>
+      services
+        .filter((service) => service.audiences.includes(audience.slug as "residential" | "commercial"))
+        .map((service) => ({ audience: audience.slug, slug: service.slug }))
+    );
 }
 
 export async function generateMetadata({
@@ -32,16 +36,18 @@ export async function generateMetadata({
   const { audience: audienceSlug, slug } = await params;
   const audience = audiences.find((a) => a.slug === audienceSlug && a.enabled);
   const baseService = services.find((s) => s.slug === slug);
-  if (!audience || !baseService) return {};
+  if (!audience || !baseService || !baseService.audiences.includes(audienceSlug as "residential" | "commercial")) {
+    return {};
+  }
 
-  const service = getServiceContent({ service: baseService, audience });
-  const title = service.seo?.title ?? `${service.name} | ${siteConfig.name}`;
-  const description = service.seo?.description ?? service.short;
+  const content = getServiceContent(baseService, audience.slug);
+  const title = content.seo?.title ?? `${content.name} | ${siteConfig.name}`;
+  const description = content.seo?.description ?? content.short;
 
   return {
     title,
     description,
-    alternates: { canonical: `/${audience.slug}/services/${service.slug}` },
+    alternates: { canonical: `/${audience.slug}/${baseService.slug}` },
   };
 }
 
@@ -51,18 +57,20 @@ export default async function AudienceServicePage({ params }: { params: Promise<
   const { audience: audienceSlug, slug } = await params;
   const audience = audiences.find((a) => a.slug === audienceSlug && a.enabled);
   const baseService = services.find((s) => s.slug === slug);
-  if (!audience || !baseService) notFound();
+  if (!audience || !baseService || !isServiceAudience(audienceSlug) || !baseService.audiences.includes(audienceSlug)) {
+    notFound();
+  }
 
-  const service = getServiceContent({ service: baseService, audience });
+  const content = getServiceContent(baseService, audience.slug);
   const relatedProjects = getProjectsByService(baseService.slug);
-  const path = `/${audience.slug}/services/${service.slug}`;
+  const path = `/${audience.slug}/${baseService.slug}`;
   const jsonLd = [
     breadcrumbJsonLd([
       { name: "Home", path: "/" },
       { name: audience.name, path: `/${audience.slug}` },
-      { name: service.name, path },
+      { name: content.name, path },
     ]),
-    serviceJsonLd(service, path),
+    serviceJsonLd(content, path),
   ];
 
   return (
@@ -73,9 +81,17 @@ export default async function AudienceServicePage({ params }: { params: Promise<
       />
       <Nav />
       <main>
-        <ServiceHero service={service} hasRelatedProjects={relatedProjects.length > 0} />
-        <ServiceOverview service={service} />
-        <RelatedProjects projects={relatedProjects} serviceName={service.name} />
+        <ServiceHero
+          content={content}
+          hasRelatedProjects={relatedProjects.length > 0}
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: audience.name, href: `/${audience.slug}` },
+            { label: content.name },
+          ]}
+        />
+        <ServiceOverview content={content} />
+        <RelatedProjects projects={relatedProjects} serviceName={content.name} />
         <Contact
           defaultService={baseService.slug}
           context={{ sourcePage: "audience-service", service: baseService.slug }}
