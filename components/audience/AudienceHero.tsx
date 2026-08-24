@@ -1,43 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Container from "../ui/Container";
 import Eyebrow from "../ui/Eyebrow";
 import Button from "../ui/Button";
 import Breadcrumbs from "../ui/Breadcrumbs";
-import type { Audience, Service } from "../../lib/types";
+import { getHeroVideo } from "../../lib/media";
+import type { Audience } from "../../lib/types";
 
-export default function AudienceHero({
-  audience,
-  services,
-}: {
-  audience: Audience;
-  services: Service[];
-}) {
+export default function AudienceHero({ audience }: { audience: Audience }) {
   return (
-    <section className="relative overflow-hidden bg-ink pt-36 pb-20 md:pb-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.14]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(237,234,227,0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(237,234,227,0.5) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
+    <section className="relative flex min-h-[70svh] w-full items-end overflow-hidden pt-32">
+      <div className="absolute inset-0 -z-30">
+        <video
+          className="h-full w-full object-cover opacity-[0.95] absolute inset-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={getHeroVideo(audience.slug)} type="video/mp4" />
+        </video>
+      </div>
 
-      <Container className="relative">
+      <div className="absolute inset-0 -z-20 bg-linear-to-t from-ink via-ink/55 to-ink/15" />
+      <div className="absolute inset-0 -z-20 bg-linear-to-r from-ink/60 via-transparent to-ink/60" />
+
+      <Container className="relative z-10 pb-20 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: audience.name }]} />
 
-          <Eyebrow className="mt-7 mb-5">{audience.name}</Eyebrow>
+          <Eyebrow light className="mt-6 mb-5">
+            {audience.name}
+          </Eyebrow>
 
-          <h1 className="max-w-2xl font-display text-5xl font-extrabold uppercase tracking-tight text-concrete sm:text-6xl md:text-7xl">
+          <h1 className="max-w-3xl font-display text-5xl font-extrabold uppercase tracking-tight text-concrete sm:text-6xl md:text-7xl">
             {audience.copy?.heroHeadline ?? audience.name}
           </h1>
 
@@ -51,22 +52,11 @@ export default function AudienceHero({
             <Button href="#contact" variant="primary">
               Get Free Estimate
             </Button>
+            <Button href="#services" variant="secondary" icon={false}>
+              View Services
+            </Button>
           </div>
         </motion.div>
-
-        {services.length > 0 && (
-          <div className="mt-16 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/${audience.slug}/services/${service.slug}`}
-                className="border border-charcoal-2 bg-charcoal/40 px-5 py-4 text-sm text-concrete/80 transition-colors hover:border-oxblood-light hover:text-concrete"
-              >
-                {service.name}
-              </Link>
-            ))}
-          </div>
-        )}
       </Container>
     </section>
   );
