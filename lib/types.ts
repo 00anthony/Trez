@@ -1,12 +1,13 @@
-export type Service = {
-  slug: string;
+export type AudienceSlug = "residential" | "commercial";
+
+export type ServiceContent = {
   name: string;
   short: string;
   description: string;
   /** Longer body copy for the dedicated service page. Falls back to `description` when absent. */
   longDescription?: string;
   bullets: string[];
-  /** Optional background photo for the service card (full-bleed, dark overlay applied on top). */
+  /** Background photo for the service card / hero (full-bleed, dark overlay applied on top). */
   image?: string;
   /** Additional photos for the service page gallery. */
   gallery?: string[];
@@ -14,15 +15,19 @@ export type Service = {
     title?: string;
     description?: string;
   };
-  /** Per-audience copy overrides, keyed by Audience.slug. Only used when features.audienceRoutes is enabled. */
-  audienceContent?: Record<
-    string,
-    {
-      headline?: string;
-      description?: string;
-      benefits?: string[];
-    }
-  >;
+};
+
+export type Service = {
+  slug: string;
+  /** Which audiences this service is actually offered to — drives the homepage filter and which /[audience]/[slug] pages get generated. */
+  audiences: AudienceSlug[];
+  /** Surfaces this service in the homepage "Featured" filter tab. */
+  featured?: boolean;
+  content: {
+    default: ServiceContent;
+    residential?: ServiceContent;
+    commercial?: ServiceContent;
+  };
 };
 
 export type ProjectCategory =

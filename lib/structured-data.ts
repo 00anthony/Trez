@@ -1,5 +1,5 @@
 import { siteConfig } from "./site-config";
-import type { Service } from "./types";
+import type { ServiceContent } from "./types";
 
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {
@@ -14,12 +14,12 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
-export function serviceJsonLd(service: Service, path: string) {
+export function serviceJsonLd(content: ServiceContent, path: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: service.name,
-    description: service.seo?.description ?? service.short,
+    name: content.name,
+    description: content.seo?.description ?? content.short,
     provider: { "@id": `${siteConfig.url}/#business` },
     areaServed: siteConfig.serviceAreaCities.map((city) => ({ "@type": "City", name: city })),
     url: `${siteConfig.url}${path}`,
