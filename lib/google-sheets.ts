@@ -59,17 +59,21 @@ export async function appendLeadToSheet(lead: LeadRow): Promise<void> {
 
   await sheets.spreadsheets.values.append({
     spreadsheetId: sheetId,
-    // Bounding both the start AND end column (B:I) is required here — a
-    // single-cell range like "B2" doesn't tell the API which columns the
-    // table occupies, so it falls back to scanning the whole sheet and
-    // anchors the table to column A (which already has data from the
-    // status dropdown), appending new rows there instead of at B2.
-    range: `${tabName}!B2:I`,
+    // The sheet's "status" column A belongs to a native Sheets Table object
+    // (not just a plain data range). The append API detects that Table's
+    // real boundaries server-side and always anchors new rows to its start
+    // column (A), ignoring the column span of whatever `range` we pass —
+    // so bounding the range to B:I doesn't stop it from writing into A.
+    // Instead we write the full A:I width ourselves, leaving A blank so the
+    // status dropdown for the new row is just unset, same as any other
+    // fresh row.
+    range: `${tabName}!A2:I`,
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {
       values: [
         [
+          "",
           formatTimestamp(lead.timestamp),
           lead.name,
           lead.phone,
