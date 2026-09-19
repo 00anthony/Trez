@@ -79,9 +79,9 @@ export default function Hero() {
           </Eyebrow>
 
           <h1 className="max-w-4xl font-display text-[15vw] leading-[0.9] font-extrabold uppercase tracking-tight text-concrete text-balance sm:text-[9vw] md:text-[6.4vw] lg:text-[5.6rem]">
-            Construction, built
+            Built to last.
             <br />
-            with <span className="text-oxblood-light ">precision.</span>
+            Built with <span className="text-oxblood-light ">purpose.</span>
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-relaxed text-concrete/75 md:text-lg">
