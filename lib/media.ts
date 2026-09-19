@@ -8,7 +8,7 @@ export const media = {
   },
   hero: {
     default: "/video/hero-loop-720p.mp4",
-    residential: "/video/hero-loop-residential-720p.mp4",
+    residential: "/video/hero-loop-720p.mp4",
     commercial: "/video/hero-loop-commercial-720p.mp4",
   },
   about: {
