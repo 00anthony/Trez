@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Trez Construction Group",
   shortName: "Trez",
-  tagline: "Concrete, Poured With Precision.",
+  tagline: "Central Texas Construction, Built With Precision.",
   description:
-    "Trez Construction Group is a premium concrete contractor and general contractor serving Greater Central Texas — driveways, patios, foundations, slabs, concrete repair, and residential & light commercial construction.",
+    "Trez Construction Group is a premium general contractor serving Greater Central Texas — concrete, drywall, interior flooring, underground utilities, and residential & light commercial construction.",
   url: "https://www.trezconstruction.com",
   phone: "(512) 216-3804",
   phoneHref: "tel:+15122163804",

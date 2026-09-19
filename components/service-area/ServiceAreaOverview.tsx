@@ -25,7 +25,7 @@ export default function ServiceAreaOverview({
             <Reveal>
               <Eyebrow>About This Area</Eyebrow>
               <h2 className="mt-5 max-w-lg font-display text-3xl font-bold uppercase tracking-tight text-concrete sm:text-4xl">
-                Concrete work built for {area.name}
+                Construction work built for {area.name}
               </h2>
               <p className="mt-5 max-w-xl leading-relaxed text-concrete/70">{area.description}</p>
             </Reveal>

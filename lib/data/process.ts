@@ -17,7 +17,7 @@ export const processSteps = [
     step: "03",
     title: "Construction",
     description:
-      "Your crew lead keeps you updated at every stage — excavation, forming, reinforcement, pour, and finish.",
+      "Your crew lead keeps you updated at every stage — site prep, framing, finish work, and everything in between.",
     image: "/process/construction.jpg",
   },
   {

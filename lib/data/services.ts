@@ -190,9 +190,9 @@ export const services: Service[] = [
     content: {
       default: {
         name: "Light Commercial Construction",
-        short: "Tenant finish-out, pads, and light commercial concrete work.",
+        short: "Tenant finish-out, pads, and light commercial build-outs.",
         description:
-          "Commercial concrete and light construction for retail build-outs, parking areas, and small commercial properties.",
+          "Commercial construction and light build-outs for retail spaces, parking areas, and small commercial properties.",
         bullets: ["Commercial pads & flatwork", "Tenant finish-out", "Bonded & insured crews"],
         image: "/services/light-commercial.avif",
       },

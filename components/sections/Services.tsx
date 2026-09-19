@@ -47,11 +47,11 @@ export default function Services({
         <Reveal>
           <Eyebrow>What We Build</Eyebrow>
           <h2 className="mt-5 max-w-2xl font-display text-4xl font-bold uppercase tracking-tight text-concrete sm:text-5xl md:text-6xl">
-            Full-scope concrete
-            <br />& construction
+            Full-scope
+            <br />construction services
           </h2>
           <p className="mt-5 max-w-lg text-concrete/65">
-            From a single driveway to a full-scope concrete services, all handled by our network of vetted professionals.
+            From a single driveway to a full-scope build-out, all handled by our network of vetted professionals.
           </p>
         </Reveal>
 
@@ -105,7 +105,7 @@ export default function Services({
             Not Seeing Your Project?
           </p>
           <h3 className="mt-4 max-w-xl font-display text-3xl font-bold uppercase tracking-tight text-concrete sm:text-4xl">
-            We build custom concrete &amp; construction solutions
+            We build custom construction solutions
           </h3>
           <p className="mt-4 max-w-md text-sm text-concrete/60">
             Browse the full service catalog, or send us the details and we&rsquo;ll

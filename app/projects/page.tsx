@@ -9,7 +9,7 @@ import { siteConfig } from "../../lib/site-config";
 export const metadata: Metadata = {
   title: `Project Portfolio | ${siteConfig.name}`,
   description:
-    "Browse every completed concrete and construction project across Greater Central Texas, filterable by category.",
+    "Browse every completed construction project across Greater Central Texas, filterable by category.",
   alternates: { canonical: "/projects" },
 };
 

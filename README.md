@@ -1,6 +1,6 @@
 # Trez Construction Group — Website
 
-A premium marketing site for Trez Construction Group, a concrete & general
+A premium marketing site for Trez Construction Group, a general
 contracting company serving Greater Central Texas. Built with Next.js 15
 (App Router), React, TypeScript, and Tailwind CSS v4.
 
@@ -117,7 +117,7 @@ request — handy for local development before secrets are configured.
 
 - `src/app/layout.tsx` — metadata, Open Graph, Twitter cards, and
   JSON-LD (`GeneralContractor` / `HomeAndConstructionBusiness` +
-  `WebSite` schema) targeting Central Texas concrete/contracting keywords.
+  `WebSite` schema) targeting Central Texas general-contracting keywords.
 - `src/app/sitemap.ts` and `src/app/robots.ts` — update
   `siteConfig.url` once you have a production domain.
 

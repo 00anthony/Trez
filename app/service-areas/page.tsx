@@ -19,8 +19,8 @@ export default function ServiceAreasIndexPage() {
       <main>
         <PageHero
           eyebrow="Service Areas"
-          title="Where We Pour"
-          description={`Concrete and construction services across ${siteConfig.serviceArea}.`}
+          title="Where We Build"
+          description={`Construction services across ${siteConfig.serviceArea}.`}
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Service Areas" }]}
         />
         <ServiceAreasGrid />

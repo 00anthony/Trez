@@ -25,13 +25,13 @@ export const faqs = [
       "We serve the Greater Central Texas region, including Austin, Kyle, Buda, San Marcos, Lockhart, Dripping Springs, Wimberly, Manor, Cedar Creek, and Oak Hill.",
   },
   {
-    question: "Is there a warranty on your concrete work?",
+    question: "Is there a warranty on your work?",
     answer:
-      "Yes. All structural concrete work includes a written workmanship warranty, in addition to any applicable manufacturer warranties on sealers and specialty finishes.",
+      "Yes. All structural and finish work includes a written workmanship warranty, in addition to any applicable manufacturer warranties on materials and finishes.",
   },
   {
-    question: "How much does a concrete project typically cost?",
+    question: "How much does a project typically cost?",
     answer:
-      "Cost depends heavily on square footage, finish type, and site prep needs. Our free estimate lets us give you an accurate, itemized number rather than a rough range that misses the specifics of your lot.",
+      "Cost depends heavily on square footage, finish type, and site prep needs. Our free estimate lets us give you an accurate, itemized number rather than a rough range that misses the specifics of your project.",
   },
 ];

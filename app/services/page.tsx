@@ -7,9 +7,9 @@ import Footer from "../../components/sections/Footer";
 import { siteConfig } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: `Concrete & Construction Services | ${siteConfig.name}`,
+  title: `Construction Services | ${siteConfig.name}`,
   description:
-    "Every concrete and construction service Trez offers across Greater Central Texas — driveways, patios, foundations, slabs, repair, and more.",
+    "Every construction service Trez offers across Greater Central Texas — concrete, drywall, flooring, underground utilities, and more.",
   alternates: { canonical: "/services" },
 };
 

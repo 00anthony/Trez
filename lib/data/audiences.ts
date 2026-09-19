@@ -12,9 +12,9 @@ export const audiences: Audience[] = [
     name: "Residential",
     enabled: true,
     copy: {
-      heroHeadline: "Concrete Built for Your Home",
+      heroHeadline: "Built for Your Home, Start to Finish",
       heroDescription:
-        "Driveways, patios, and foundation work for homeowners across Central Texas — built to handle expansive clay soil and backed by a written workmanship warranty.",
+        "Foundations, driveways, interior finish-out, and everything in between for homeowners across Central Texas — built to handle expansive clay soil and backed by a written workmanship warranty.",
     },
   },
   {
@@ -22,9 +22,9 @@ export const audiences: Audience[] = [
     name: "Commercial",
     enabled: true,
     copy: {
-      heroHeadline: "Commercial Concrete & Light Construction",
+      heroHeadline: "Commercial Construction & Light Build-Outs",
       heroDescription:
-        "Load-rated pads, tenant finish-out, and flatwork for commercial properties across Central Texas — scheduled around your business, not the other way around.",
+        "Concrete, tenant finish-out, and light construction for commercial properties across Central Texas — scheduled around your business, not the other way around.",
     },
   },
 ];

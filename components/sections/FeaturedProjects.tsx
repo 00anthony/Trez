@@ -52,7 +52,7 @@ export default function FeaturedProjects() {
             <div>
               <Eyebrow>Featured Projects</Eyebrow>
               <h2 className="mt-5 max-w-xl font-display text-4xl font-bold uppercase tracking-tight text-concrete sm:text-5xl md:text-6xl">
-                Work poured
+                Work built
                 <br />
                 across Central Texas
               </h2>

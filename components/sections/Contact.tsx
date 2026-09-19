@@ -47,7 +47,7 @@ export default function Contact({
         <Reveal>
           <Eyebrow>Get Started</Eyebrow>
           <h2 className="mt-5 max-w-xl font-display text-4xl font-bold uppercase tracking-tight text-concrete sm:text-5xl">
-            Let&rsquo;s pour
+            Let&rsquo;s start
             <br />
             something built to last
           </h2>

@@ -27,7 +27,7 @@ export default function Footer() {
 
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-concrete/55">
-              Premium concrete and general contracting for {siteConfig.serviceArea}.
+              Premium general contracting for {siteConfig.serviceArea}.
             </p>
             <div className="mt-6 flex gap-3">
               <a

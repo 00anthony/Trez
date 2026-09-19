@@ -79,23 +79,24 @@ export default function About() {
             <Reveal delay={0.05}>
               <p className="text-lg leading-relaxed text-concrete/85">
                 Trez Construction Group was built on a simple premise: Central
-                Texas ground is unforgiving, and most concrete failures here
-                come down to shortcuts taken before the truck ever shows up.
+                Texas ground is unforgiving, and most construction failures here
+                come down to shortcuts taken before the crew ever shows up.
               </p>
             </Reveal>
             <Reveal delay={0.12}>
               <p className="leading-relaxed">
-                We believe quality concrete starts long before the pour. From understanding
-                Central Texas soil conditions to coordinating the right preparation and
-                craftsmanship, we stay involved throughout the process to make sure every
+                We believe quality construction starts long before the first day
+                on site. From understanding Central Texas soil conditions to
+                coordinating the right preparation and craftsmanship across every
+                trade, we stay involved throughout the process to make sure every
                 project is built on a proper foundation.
               </p>
             </Reveal>
             <Reveal delay={0.18}>
               <p className="leading-relaxed">
                 Today we serve homeowners, HOAs, and light commercial clients
-                across {siteConfig.serviceArea} — from single-driveway jobs
-                to multi-week commercial flatwork packages.
+                across {siteConfig.serviceArea} — from single-room remodels
+                to multi-week commercial build-outs.
               </p>
             </Reveal>
 
