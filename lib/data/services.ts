@@ -199,6 +199,36 @@ export const services: Service[] = [
     },
   },
   {
+    slug: "underground-water-and-sewer",
+    audiences: ["residential", "commercial"],
+    content: {
+      default: {
+        name: "Underground Water & Sewer",
+        short: "Water and sewer line installation, repair, and replacement.",
+        description:
+          "Underground utility work for water and sewer lines — trenching, installation, repair, and tie-ins, handled as part of new construction or as a standalone repair.",
+        bullets: ["Water & sewer line installation", "Trenching & excavation", "Leak detection & line repair"],
+        image: "/services/sewage-residential.webp"
+      },
+      residential: {
+        name: "Residential Water & Sewer Lines",
+        short: "Water and sewer line repair and replacement for homes.",
+        description:
+          "Underground water and sewer line repair, replacement, and installation for homeowners — from a single line break to a full re-pipe.",
+        bullets: ["Water & sewer line repair and replacement", "Trenching & excavation", "Leak detection & line locating"],
+        image: "/services/sewage-residential.webp"
+      },
+      commercial: {
+        name: "Commercial Underground Utilities",
+        short: "Water, sewer, and site utility installation for commercial properties.",
+        description:
+          "Underground water and sewer utility installation and tie-ins for commercial and light-industrial sites, coordinated with the rest of your site development.",
+        bullets: ["Site utility installation & tie-ins", "Trenching & excavation", "Coordinated with GC & municipal inspection"],
+        image: "/services/sewage-commercial.jpg"
+      },
+    },
+  },
+  {
     slug: "drywall",
     audiences: ["residential", "commercial"],
     featured: true,

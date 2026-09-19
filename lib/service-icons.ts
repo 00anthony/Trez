@@ -11,6 +11,7 @@ import {
   ClipboardList,
   PaintRoller,
   LayoutGrid,
+  Droplets,
 } from "lucide-react";
 
 export const serviceIcons: Record<string, ComponentType<{ className?: string; strokeWidth?: number }>> = {
@@ -25,4 +26,5 @@ export const serviceIcons: Record<string, ComponentType<{ className?: string; st
   "custom-project": ClipboardList,
   drywall: PaintRoller,
   "interior-flooring": LayoutGrid,
+  "underground-water-and-sewer": Droplets,
 };
