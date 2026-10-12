@@ -24,7 +24,8 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return {};
 
-  const title = `${project.title} | ${siteConfig.name}`;
+  // Root layout's title.template appends the site name; it doesn't apply to openGraph.
+  const title = project.title;
   const description = project.description;
 
   return {
@@ -32,7 +33,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/projects/${project.slug}` },
     openGraph: {
-      title,
+      title: `${title} | ${siteConfig.name}`,
       description,
       url: `/projects/${project.slug}`,
       images: project.afterSrc ? [{ url: project.afterSrc }] : undefined,

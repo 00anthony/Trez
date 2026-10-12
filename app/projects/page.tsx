@@ -4,10 +4,9 @@ import PageHero from "../../components/ui/PageHero";
 import ProjectsDirectory from "../../components/sections/ProjectsDirectory";
 import Contact from "../../components/sections/Contact";
 import Footer from "../../components/sections/Footer";
-import { siteConfig } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: `Project Portfolio | ${siteConfig.name}`,
+  title: "Project Portfolio",
   description:
     "Browse every completed construction project across Greater Central Texas, filterable by category.",
   alternates: { canonical: "/projects" },

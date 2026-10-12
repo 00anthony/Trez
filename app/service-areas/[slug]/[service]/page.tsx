@@ -47,7 +47,7 @@ export async function generateMetadata({
   const { area, service } = resolved;
   const content = getServiceContent(service);
   const locationLabel = `${area.name}${area.state ? `, ${area.state}` : ""}`;
-  const title = `${content.name} in ${locationLabel} | ${siteConfig.name}`;
+  const title = `${content.name} in ${locationLabel}`;
   const description = `${content.short} Serving ${locationLabel} and the surrounding area.`;
 
   return {

@@ -6,7 +6,7 @@ import Footer from "../../components/sections/Footer";
 import { siteConfig } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: `Contact ${siteConfig.name}`,
+  title: { absolute: `Contact ${siteConfig.name}` },
   description: `Request a free estimate from ${siteConfig.name}. ${siteConfig.responsePromise}`,
   alternates: { canonical: "/contact" },
 };

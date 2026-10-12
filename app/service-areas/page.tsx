@@ -7,7 +7,7 @@ import Footer from "../../components/sections/Footer";
 import { siteConfig } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: `Service Areas | ${siteConfig.name}`,
+  title: "Service Areas",
   description: `Everywhere ${siteConfig.name} works across ${siteConfig.serviceArea}.`,
   alternates: { canonical: "/service-areas" },
 };

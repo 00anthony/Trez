@@ -16,12 +16,18 @@ import AppShell from "../components/AppShell";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | General Contractor in Central Texas`,
+    default: `${siteConfig.name} | Construction Company in Central Texas`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "Premium general contractor serving Greater Central Texas. Concrete, drywall, interior flooring, underground utilities, and residential & commercial construction. Insured and free estimates.",
+    "Construction company and concrete contractor serving Greater Central Texas. Drywall installation, flooring installation, wet utilities installation, and residential & commercial construction. Insured and free estimates.",
   keywords: [
+    "construction company",
+    "drywall installation",
+    "wet utilities installation",
+    "flooring installation",
+    "concrete contractor",
+    "construction company Central Texas",
     "general contractor Central Texas",
     "general contractor Austin",
     "concrete contractor Central Texas",
@@ -39,17 +45,17 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: `${siteConfig.name} | General Contractor in Central Texas`,
+    title: `${siteConfig.name} | Construction Company in Central Texas`,
     description:
-      "Premium general contracting for Greater Central Texas. Concrete, drywall, flooring, underground utilities & more. Insured and free estimates.",
+      "Construction company and concrete contractor for Greater Central Texas. Drywall installation, flooring installation, wet utilities installation & more. Insured and free estimates.",
     siteName: siteConfig.name,
     images: [{ url: media.og.image, width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | General Contractor in Central Texas`,
+    title: `${siteConfig.name} | Construction Company in Central Texas`,
     description:
-      "Premium general contracting for Greater Central Texas. Insured and free estimates.",
+      "Construction company and concrete contractor for Greater Central Texas. Insured and free estimates.",
     images: [media.og.image],
   },
   robots: { index: true, follow: true },
@@ -86,7 +92,7 @@ const jsonLd = {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         opens: "07:00",
-        closes: "18:00",
+        closes: "20:00",
       },
       sameAs: [siteConfig.social.facebook, siteConfig.social.instagram],
     },

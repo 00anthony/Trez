@@ -79,16 +79,17 @@ export default function Hero() {
           </Eyebrow>
 
           <h1 className="max-w-4xl font-display text-[15vw] leading-[0.9] font-extrabold uppercase tracking-tight text-concrete text-balance sm:text-[9vw] md:text-[6.4vw] lg:text-[5.6rem]">
-            Built to last.
+            Built with Purpose.
             <br />
-            Built with <span className="text-oxblood-light ">purpose.</span>
+            Finished with <span className="text-oxblood-light ">Quality.</span>
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-relaxed text-concrete/75 md:text-lg">
-            Trez Construction Group builds and finishes homes and commercial
-            spaces across Central Texas — from the foundation up — backed by
-            a crew that shows up, stays on schedule, and stands behind the
-            work.
+            Trez Construction Group is a Central Texas construction company
+            and concrete contractor handling drywall installation, flooring
+            installation, and wet utilities installation for homes and
+            commercial spaces — backed by a crew that shows up, stays on
+            schedule, and stands behind the work.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">

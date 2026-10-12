@@ -4,12 +4,11 @@ import PageHero from "../../components/ui/PageHero";
 import ServicesDirectory from "../../components/sections/ServicesDirectory";
 import Contact from "../../components/sections/Contact";
 import Footer from "../../components/sections/Footer";
-import { siteConfig } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: `Construction Services | ${siteConfig.name}`,
+  title: "Construction Services",
   description:
-    "Every construction service Trez offers across Greater Central Texas — concrete, drywall, flooring, underground utilities, and more.",
+    "Every service our construction company offers across Greater Central Texas — concrete contractor work, drywall installation, flooring installation, wet utilities installation, and more.",
   alternates: { canonical: "/services" },
 };
 

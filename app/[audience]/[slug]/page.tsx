@@ -41,7 +41,7 @@ export async function generateMetadata({
   }
 
   const content = getServiceContent(baseService, audience.slug);
-  const title = content.seo?.title ?? `${content.name} | ${siteConfig.name}`;
+  const title = content.seo?.title ?? content.name;
   const description = content.seo?.description ?? content.short;
 
   return {

@@ -31,7 +31,7 @@ export async function generateMetadata({
   if (!audience) return {};
 
   return {
-    title: audience.copy?.heroHeadline ?? `${audience.name} | ${siteConfig.name}`,
+    title: audience.copy?.heroHeadline ?? audience.name,
     description: audience.copy?.heroDescription,
     alternates: { canonical: `/${audience.slug}` },
   };

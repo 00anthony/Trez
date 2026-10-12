@@ -27,7 +27,8 @@ export async function generateMetadata({
   if (!service) return {};
 
   const content = getServiceContent(service);
-  const title = content.seo?.title ?? `${content.name} | ${siteConfig.name}`;
+  // Root layout's title.template appends the site name; it doesn't apply to openGraph.
+  const title = content.seo?.title ?? content.name;
   const description = content.seo?.description ?? content.short;
 
   return {
@@ -35,7 +36,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
-      title,
+      title: `${title} | ${siteConfig.name}`,
       description,
       url: `/services/${service.slug}`,
       images: content.image ? [{ url: content.image }] : undefined,

@@ -206,9 +206,14 @@ export const services: Service[] = [
         name: "Underground Water & Sewer",
         short: "Water and sewer line installation, repair, and replacement.",
         description:
-          "Underground utility work for water and sewer lines — trenching, installation, repair, and tie-ins, handled as part of new construction or as a standalone repair.",
+          "Wet utilities installation for underground water and sewer lines — trenching, installation, repair, and tie-ins, handled as part of new construction or as a standalone repair.",
         bullets: ["Water & sewer line installation", "Trenching & excavation", "Leak detection & line repair"],
-        image: "/services/sewage-residential.webp"
+        image: "/services/sewage-residential.webp",
+        seo: {
+          title: "Wet Utilities Installation — Water & Sewer",
+          description:
+            "Wet utilities installation across Central Texas — underground water and sewer line installation, repair, and tie-ins for homes and commercial sites.",
+        },
       },
       residential: {
         name: "Residential Water & Sewer Lines",
@@ -237,9 +242,14 @@ export const services: Service[] = [
         name: "Drywall Installation & Repair",
         short: "Hang, finish, and repair drywall for additions, remodels, and build-outs.",
         description:
-          "Full drywall service from framing to final finish — hanging, taping, texturing, and repair work integrated with our construction and remodeling projects.",
+          "Full drywall installation from framing to final finish — hanging, taping, texturing, and repair work integrated with our construction and remodeling projects.",
         bullets: ["Hang, tape, float & texture", "Patch & repair for existing walls", "Level 4/5 finish available"],
         image: "/services/drywall-residential.jpg",
+        seo: {
+          title: "Drywall Installation & Repair",
+          description:
+            "Drywall installation and repair across Central Texas — hanging, taping, texturing, and finishing for additions, remodels, and commercial build-outs.",
+        },
       },
       residential: {
         name: "Residential Drywall",
@@ -268,9 +278,14 @@ export const services: Service[] = [
         name: "Interior Flooring",
         short: "Tile, vinyl, and wood flooring installed as part of your build or remodel.",
         description:
-          "Interior flooring installation — tile, luxury vinyl, and wood — coordinated with our construction and remodeling projects from subfloor to finish.",
+          "Flooring installation — tile, luxury vinyl, and wood — coordinated with our construction and remodeling projects from subfloor to finish.",
         bullets: ["Tile, vinyl & wood installation", "Subfloor prep & leveling", "Coordinated with remodel timelines"],
         image: "/services/flooring-residential.jpg",
+        seo: {
+          title: "Flooring Installation — Tile, Vinyl & Wood",
+          description:
+            "Flooring installation across Central Texas — tile, luxury vinyl, and wood flooring installed from subfloor to finish for homes and commercial spaces.",
+        },
       },
       residential: {
         name: "Residential Flooring",

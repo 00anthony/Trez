@@ -8,7 +8,7 @@ import Footer from "../../components/sections/Footer";
 import { siteConfig } from "../../lib/site-config";
 
 export const metadata: Metadata = {
-  title: `About ${siteConfig.name}`,
+  title: { absolute: `About ${siteConfig.name}` },
   description: `Learn about ${siteConfig.name}, a full-service general contractor serving ${siteConfig.serviceArea}.`,
   alternates: { canonical: "/about" },
 };

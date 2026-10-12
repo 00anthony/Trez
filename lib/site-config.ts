@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Trez",
   tagline: "Central Texas Construction, Built With Precision.",
   description:
-    "Trez Construction Group is a premium general contractor serving Greater Central Texas — concrete, drywall, interior flooring, underground utilities, and residential & light commercial construction.",
+    "Trez Construction Group is a construction company and concrete contractor serving Greater Central Texas — drywall installation, flooring installation, wet utilities installation, and residential & light commercial construction.",
   url: "https://www.trezconstruction.com",
   phone: "(512) 216-3804",
   phoneHref: "tel:+15122163804",
@@ -22,7 +22,7 @@ export const siteConfig = {
     "Cedar Creek",
   ],
   responsePromise: "We respond to every estimate request within one business day.",
-  hours: "Mon–Sat, 7:00 AM – 6:00 PM",
+  hours: "Mon–Sat, 7:00 AM – 8:00 PM",
   social: {
     facebook: "https://www.facebook.com/people/Trez-Construction-Group/61591934102551/",
     instagram: "https://www.instagram.com/trezconstruction/",
