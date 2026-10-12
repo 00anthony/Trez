@@ -26,7 +26,7 @@ export async function generateMetadata({
   const area = serviceAreas.find((a) => a.slug === slug);
   if (!area || !siteConfig.features.serviceAreaPages) return {};
 
-  const title = area.seo?.title ?? `General Contractor in ${area.name}${area.state ? `, ${area.state}` : ""}`;
+  const title = area.seo?.title ?? `Construction Company in ${area.name}${area.state ? `, ${area.state}` : ""}`;
   const description = area.seo?.description ?? area.shortDescription;
 
   return {

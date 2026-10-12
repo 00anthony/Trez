@@ -10,7 +10,7 @@ export const serviceAreas: ServiceArea[] = [
       "Austin's mix of older in-town lots and fast-moving new construction means every project has to answer for different soil history and access constraints. We've built driveways, patios, and commercial pads across South and East Austin, working around tight lots, mature trees, and HOA guidelines without cutting corners on base prep.",
     relatedServices: ["driveways", "patios", "commercial-construction", "sidewalks"],
     localCopy: {
-      headline: "General contractors serving Austin, Texas",
+      headline: "Construction Company in Austin, Texas",
       intro:
         "From South Austin driveways to light commercial pads near the urban core, we build for the reality of Austin lots — tight access, mature landscaping, and clay soil that doesn't forgive shortcuts.",
       notes: [
@@ -29,7 +29,7 @@ export const serviceAreas: ServiceArea[] = [
       "Buda's rapid residential growth means a lot of newer slabs settling into clay soil for the first time, alongside older homes finally due for driveway, foundation, or interior work. We handle both — new-build foundations for growing subdivisions and repair work for established homes fighting seasonal ground movement.",
     relatedServices: ["foundations", "concrete-repair", "driveways", "slabs"],
     localCopy: {
-      headline: "General contractors serving Buda, Texas",
+      headline: "Construction Company in Buda, Texas",
       intro:
         "Buda sits squarely on expansive Central Texas clay, which is exactly why we engineer every foundation and slab for soil movement first, finish second.",
       notes: [
@@ -48,7 +48,7 @@ export const serviceAreas: ServiceArea[] = [
       "Kyle's newer subdivisions and infill lots keep us busy with driveways, patios, and garage or shop slabs. We work directly with homeowners and, where needed, coordinate with HOA design guidelines common in Kyle's newer developments.",
     relatedServices: ["driveways", "patios", "slabs", "sidewalks"],
     localCopy: {
-      headline: "General contractors serving Kyle, Texas",
+      headline: "Construction Company in Kyle, Texas",
       intro:
         "Whether it's a driveway on a new build or a patio addition in an established Kyle neighborhood, every project is engineered for the same clay-soil conditions across this stretch of I-35.",
       notes: [
@@ -67,7 +67,7 @@ export const serviceAreas: ServiceArea[] = [
       "San Marcos's river-adjacent neighborhoods and steady residential growth bring a mix of drainage-sensitive patio work and standard driveway and repair jobs. We pay close attention to grading and drainage design given the area's proximity to the San Marcos River watershed.",
     relatedServices: ["patios", "driveways", "concrete-repair"],
     localCopy: {
-      headline: "General contractors serving San Marcos, Texas",
+      headline: "Construction Company in San Marcos, Texas",
       intro:
         "Drainage design matters more in San Marcos than most of our service area — we grade every patio and driveway project with the local watershed in mind.",
       notes: [
